@@ -1,0 +1,45 @@
+// global
+@import "global/_variables";
+@import "global/_mixins";
+@import "global/_scrollbar";
+@import "global/_fonts";
+@import "global/_normalize";
+@import "global/_reboot";
+@import "global/_container";
+@import "global/_visually-hidden";
+
+// blocks
+@import "blocks/_btn";
+@import "blocks/_card";
+@import "blocks/_header";
+@import "blocks/_nav";
+@import "blocks/_burger";
+@import "blocks/_hero";
+
+@import "blocks/_facts";
+@import "blocks/_facts-card";
+@import "blocks/_bonus";
+@import "blocks/_checkmark";
+@import "blocks/_step-card";
+@import "blocks/_faq";
+@import "blocks/_big-cta";
+@import "blocks/_footer";
+@import "blocks/_banner";
+@import "blocks/_steps";
+@import "blocks/_games";
+@import "blocks/_sports";
+
+@import "blocks/_payments";
+@import "blocks/_reviews";
+@import "blocks/_support";
+@import "blocks/_mobile";
+@import "blocks/_why";
+
+@import "blocks/_section-nav";
+@import "blocks/_section-cta";
+@import "blocks/_safety";
+@import "blocks/_gaming-policy";
+@import "blocks/_wheel";
+@import "blocks/_popup";
+@import "blocks/_spin-btn";
+@import "blocks/_registration";

@@ -1,0 +1,36 @@
+// Custom Scrollbar Styles
+@mixin custom-scrollbar(
+    $track-color: #2e1f14,
+    $thumb-color: #8b5a3c,
+    $thumb-hover: #a67c52,
+    $thumb-width: 8px
+) {
+    // Firefox
+    scrollbar-color: $thumb-color $track-color;
+    scrollbar-width: thin;
+
+    // Chrome, Safari, Edge
+    &::-webkit-scrollbar {
+        width: $thumb-width;
+        height: $thumb-width;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: $track-color;
+        border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: $thumb-color;
+        border-radius: 10px;
+        border: 2px solid $track-color;
+
+        &:hover {
+            background: $thumb-hover;
+        }
+    }
+
+    &::-webkit-scrollbar-thumb:window-inactive {
+        background: lighten($thumb-color, 10%);
+    }
+}

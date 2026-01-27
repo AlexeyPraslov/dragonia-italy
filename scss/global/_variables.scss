@@ -1,0 +1,16 @@
+$color-white: #ffffff;
+$color-black: #000000;
+
+// viewport breakpoints
+$vp-tablet: 1023px;
+$vp-mobile: 767px;
+$vp-small: 480px;
+
+:root {
+    --electric-border-color: #ff9a00;
+    --electric-light-color: oklch(from var(--electric-border-color) l c h);
+    --gradient-color: oklch(
+        from var(--electric-border-color) 0.3 calc(c / 2) h / 0.4
+    );
+    --color-neutral-900: oklch(0.185 0 0);
+}
