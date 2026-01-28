@@ -1,15 +1,12 @@
-// Custom Scrollbar Styles
 @mixin custom-scrollbar(
     $track-color: #2e1f14,
     $thumb-color: #8b5a3c,
     $thumb-hover: #a67c52,
     $thumb-width: 8px
 ) {
-    // Firefox
     scrollbar-color: $thumb-color $track-color;
     scrollbar-width: thin;
 
-    // Chrome, Safari, Edge
     &::-webkit-scrollbar {
         width: $thumb-width;
         height: $thumb-width;

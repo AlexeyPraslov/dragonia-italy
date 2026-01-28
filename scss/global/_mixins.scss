@@ -1,4 +1,4 @@
-// ================= MEDIA QUERIES =================
+
 @mixin vp-1023 {
     @media (max-width: $vp-tablet) {
         @content;
@@ -17,7 +17,7 @@
     }
 }
 
-// ================= DESKTOP ONLY =================
+
 @mixin desktop-only {
     @media (min-width: 993px) {
         @content;

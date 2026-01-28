@@ -2,6 +2,16 @@
     padding: 40px 0;
     overflow: hidden;
 
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+
+        @include vp-767 {
+            gap: 32px;
+        }
+    }
+
     &__title {
         font-size: 36px;
         font-weight: 900;
@@ -38,15 +48,11 @@
 
     &__cards-wrap {
         position: relative;
-
         margin-left: -19px;
         margin-right: -19px;
-
         overflow-x: auto;
         overflow-y: visible;
-
         -webkit-overflow-scrolling: touch;
-
         scrollbar-width: thin;
         scrollbar-color: #ff9a00 #241208;
 
@@ -69,40 +75,33 @@
     &__cards {
         display: flex;
         gap: 22px;
-
         padding: 43px 16px 24px;
-
         width: max-content;
         min-width: 100%;
     }
 }
 
-/* =====================
-   FEATURE CARD
-===================== */
-
 .feature-card {
     flex: 0 0 260px;
     max-width: 260px;
-
     position: relative;
     display: flex;
     flex-direction: column;
-
     text-decoration: none;
-
     border-radius: 20px;
     background: radial-gradient(circle at top, #2a1506, #120700);
-
     box-shadow:
         0 6px 18px rgba(0, 0, 0, 0.45),
         0 0 0 1px rgba(255, 154, 0, 0.18),
         0 0 22px rgba(255, 154, 0, 0.15);
-
     transition:
         transform 0.35s ease,
         box-shadow 0.35s ease,
         background 0.35s ease;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 
     &:hover {
         transform: translateY(-8px);
@@ -116,21 +115,17 @@
     &__media {
         position: relative;
         height: 190px;
-
         display: flex;
         align-items: flex-end;
         justify-content: center;
-
         overflow: visible;
         padding-top: 16px;
     }
 
     &__image {
         --img-shift-y: 55px;
-
         max-height: 220px;
         transform: translateY(var(--img-shift-y));
-
         transition: transform 0.45s cubic-bezier(0.2, 0.9, 0.3, 1.2);
         pointer-events: none;
     }
@@ -142,15 +137,16 @@
     &__content {
         position: relative;
         padding: 18px 16px 20px;
-
         background: linear-gradient(
             180deg,
             rgba(18, 7, 0, 0) 0%,
             rgba(18, 7, 0, 0.85) 35%,
             rgba(18, 7, 0, 0.95) 100%
         );
-
         border-radius: 0 0 20px 20px;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
     }
 
     &__title {

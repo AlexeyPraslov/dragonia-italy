@@ -62,8 +62,6 @@
         transform: translateY(-6px);
     }
 
-    /* ================= FRAME ================= */
-
     &__inner {
         position: absolute;
         inset: 0;
@@ -91,7 +89,6 @@
         z-index: 2;
     }
 
-    /* ================= DECOR ================= */
 
     &__glow-1,
     &__glow-2,
@@ -112,7 +109,6 @@
         display: none;
     }
 
-    /* ================= IMAGE ================= */
 
     &__image {
         position: absolute;
@@ -125,7 +121,6 @@
         pointer-events: none;
     }
 
-    /* ================= HOVER ================= */
 
     &__hover {
         position: absolute;
@@ -147,7 +142,6 @@
         opacity: 1;
     }
 
-    /* ================= TEXT ================= */
 
     &__title {
         font-size: 20px;
@@ -171,7 +165,6 @@
         }
     }
 
-    /* ================= BUTTON ================= */
 
     &__play {
         display: inline-flex;
@@ -224,7 +217,6 @@
         }
     }
 
-    /* ================= DESKTOP FX ================= */
 
     @include desktop-only {
         &__main {
