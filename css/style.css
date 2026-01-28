@@ -2568,6 +2568,26 @@ p {
   -webkit-box-shadow: 0 0 20px rgba(255, 150, 0, 0.8);
           box-shadow: 0 0 20px rgba(255, 150, 0, 0.8);
 }
+.gamification__subtitle {
+  font-size: 24px;
+  font-weight: 900;
+  color: #ff9a00;
+  margin: 0 0 30px 0;
+  position: relative;
+}
+.gamification__subtitle::after {
+  content: "";
+  position: absolute;
+  bottom: -16px;
+  left: 0;
+  width: 50px;
+  height: 4px;
+  border-radius: 2px;
+  background: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(#ff9a00), to(transparent));
+  background: linear-gradient(90deg, transparent, #ff9a00, transparent);
+  -webkit-box-shadow: 0 0 20px rgba(255, 150, 0, 0.8);
+          box-shadow: 0 0 20px rgba(255, 150, 0, 0.8);
+}
 .gamification__text {
   font-size: 16px;
   max-width: 720px;
