@@ -49,24 +49,23 @@
         }
     }
 
-    &__payment-btn {
+    &__payment-link {
         width: 80px;
         height: 36px;
         min-width: 80px;
         min-height: 36px;
         max-width: 80px;
         max-height: 36px;
-
-        background-color: rgba(122, 63, 38, 0.2);
-        border: 1px solid #2a1a12;
-        border-radius: 4px;
-        cursor: pointer;
-        padding: 0;
         display: flex;
         align-items: center;
         justify-content: center;
+        background-color: rgba(122, 63, 38, 0.2);
+        border: 1px solid #2a1a12;
+        border-radius: 4px;
+        text-decoration: none;
         transition: all 0.2s ease;
         flex-shrink: 0;
+        color: inherit;
 
         &:hover,
         &:focus {
@@ -104,11 +103,11 @@
     }
 
     &__payment-icon {
-        width: 50px;
+        display: block;
+        width: 100%;
         height: auto;
         max-width: 100%;
         max-height: 100%;
-        display: block;
         fill: currentColor;
     }
 

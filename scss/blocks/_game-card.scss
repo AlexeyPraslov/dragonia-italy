@@ -9,14 +9,14 @@
         align-items: flex-start;
         overflow-x: auto;
         padding: 0 24px;
-        margin: 0 -24px;
+        margin: 0 -40px;
         gap: 16px;
         scroll-behavior: smooth;
         -webkit-overflow-scrolling: touch;
-        scrollbar-width: none; // Firefox
+        scrollbar-width: none;
 
         &::-webkit-scrollbar {
-            display: none; // Chrome, Safari, Edge
+            display: none;
         }
 
         .game-card {
@@ -28,7 +28,7 @@
     @include vp-767 {
         gap: 12px;
         padding: 0 16px;
-        margin: 0 -16px;
+        margin: 0 -20px;
 
         .game-card {
             width: 180px;
@@ -38,7 +38,7 @@
     @include vp-480 {
         gap: 10px;
         padding: 0 12px;
-        margin: 0 -12px;
+        margin: 0 -20px;
 
         .game-card {
             width: 160px;
@@ -47,74 +47,63 @@
 }
 
 .game-card {
-    display: block;
-    padding: 2px;
-    border-radius: 16px;
     position: relative;
-    background:
-        linear-gradient(
-            -30deg,
-            var(--gradient-color),
-            transparent,
-            var(--gradient-color)
-        ),
-        linear-gradient(
-            to bottom,
-            var(--color-neutral-900),
-            var(--color-neutral-900)
-        );
+    display: block;
+    aspect-ratio: 2 / 3;
+    border-radius: 16px;
+    overflow: hidden;
     text-decoration: none;
     color: inherit;
-    overflow: hidden;
+    padding: 2px;
+    background: linear-gradient(-30deg, #ff9a00, transparent, #ff9a00), #0f0f15;
     transition: transform 0.3s ease;
-    aspect-ratio: 2 / 3;
 
     &:hover {
         transform: translateY(-6px);
     }
 
+    /* ================= FRAME ================= */
+
     &__inner {
         position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
+        inset: 0;
         border-radius: 16px;
-        overflow: hidden;
+        pointer-events: none;
+        z-index: 1;
     }
 
     &__border-outer {
         position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        border: 2px solid rgba(255, 154, 0, 0.5);
+        inset: 0;
+        border: 2px solid rgba(255, 154, 0, 0.55);
         border-radius: 16px;
         padding-right: 4px;
         padding-bottom: 4px;
-        pointer-events: none;
-        z-index: 2;
+        z-index: 1;
     }
 
     &__main {
         position: absolute;
-        top: -4px;
-        left: -4px;
-        right: 0;
-        bottom: 0;
+        inset: -4px 0 0 -4px;
         width: calc(100% + 4px);
         height: calc(100% + 4px);
         border-radius: 16px;
         z-index: 2;
-
-        @include vp-1023 {
-            border: none !important;
-            filter: none !important;
-        }
     }
 
-    // Слои электрического эффекта — скрыты по умолчанию
+    /* ================= DECOR ================= */
+
+    &__glow-1,
+    &__glow-2,
+    &__overlay-1,
+    &__overlay-2,
+    &__background-glow {
+        position: absolute;
+        inset: 0;
+        border-radius: 16px;
+        pointer-events: none;
+    }
+
     &__glow-1,
     &__glow-2,
     &__overlay-1,
@@ -123,48 +112,55 @@
         display: none;
     }
 
+    /* ================= IMAGE ================= */
+
     &__image {
         position: absolute;
-        top: 0;
-        left: 0;
+        inset: 0;
         width: 100%;
         height: 100%;
         object-fit: cover;
-        object-position: center;
-        display: block;
         border-radius: 16px;
         z-index: 0;
+        pointer-events: none;
     }
+
+    /* ================= HOVER ================= */
 
     &__hover {
         position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(0, 0, 0, 0.85);
+        inset: 0;
+        background: rgba(0, 0, 0, 0.82);
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        gap: 18px;
         opacity: 0;
         transition: opacity 0.3s ease;
         border-radius: 16px;
-        z-index: 4;
+        z-index: 5;
+        pointer-events: none;
     }
 
     &:hover &__hover {
         opacity: 1;
     }
 
+    /* ================= TEXT ================= */
+
     &__title {
         font-size: 20px;
         font-weight: 900;
-        color: #ff9a00;
-        text-shadow: 0 0 15px rgba(255, 150, 0, 0.8);
-        margin-bottom: 20px;
         text-align: center;
-        padding: 0 16px;
+        padding: 0 14px;
+        line-height: 1.1;
+
+        background: linear-gradient(180deg, #ffd9da, #ff5b4c);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        text-shadow: 0 0 18px rgba(255, 120, 60, 0.6);
 
         @include vp-767 {
             font-size: 18px;
@@ -175,115 +171,113 @@
         }
     }
 
+    /* ================= BUTTON ================= */
+
     &__play {
-        background: linear-gradient(90deg, #ff7a00, #ffb000);
-        color: #000;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        height: 44px;
+        padding: 0 34px;
+        border-radius: 22px;
+        font-size: 14px;
         font-weight: 900;
-        font-size: 18px;
-        padding: 14px 40px;
-        border-radius: 24px;
-        box-shadow: 0 0 30px rgba(255, 140, 0, 1);
+        letter-spacing: 0.08em;
         text-transform: uppercase;
-        letter-spacing: 1px;
-        user-select: none;
-        border: none;
         cursor: pointer;
-        transition: transform 0.3s ease;
+        white-space: nowrap;
+        user-select: none;
+        border: 1px solid rgba(255, 170, 80, 0.8);
+
+        background: rgba(255, 160, 70, 0.14);
+        color: #ffcc99;
+
+        box-shadow:
+            inset 0 0 0 1px rgba(255, 180, 90, 0.25),
+            0 0 22px rgba(255, 140, 60, 0.45);
+
+        transition:
+            transform 0.25s ease,
+            box-shadow 0.25s ease,
+            background 0.25s ease;
+
+        pointer-events: auto;
 
         &:hover {
-            transform: scale(1.05);
+            transform: translateY(-2px);
+            background: rgba(255, 170, 80, 0.22);
+            box-shadow:
+                inset 0 0 0 1px rgba(255, 200, 120, 0.4),
+                0 0 30px rgba(255, 160, 80, 0.8);
         }
 
         @include vp-767 {
-            font-size: 16px;
-            padding: 12px 32px;
+            height: 40px;
+            padding: 0 28px;
+            font-size: 13px;
         }
 
         @include vp-480 {
-            font-size: 15px;
-            padding: 10px 28px;
+            height: 38px;
+            padding: 0 24px;
+            font-size: 12px;
         }
     }
 
+    /* ================= DESKTOP FX ================= */
+
     @include desktop-only {
         &__main {
-            border: 2px solid var(--electric-border-color);
+            border: 2px solid #ff9a00;
             filter: url(#turbulent-displace);
         }
 
         &__glow-1 {
             display: block;
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
             border: 2px solid rgba(255, 154, 0, 0.6);
-            border-radius: 16px;
             filter: blur(1px);
-            pointer-events: none;
-            z-index: 2;
+            z-index: 3;
         }
 
         &__glow-2 {
             display: block;
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            border: 2px solid var(--electric-light-color);
-            border-radius: 16px;
+            border: 2px solid rgba(255, 210, 130, 0.9);
             filter: blur(4px);
-            pointer-events: none;
-            z-index: 2;
+            z-index: 3;
         }
 
         &__overlay-1,
         &__overlay-2 {
             display: block;
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            border-radius: 16px;
-            opacity: 1;
             mix-blend-mode: overlay;
             transform: scale(1.1);
             filter: blur(16px);
             background: linear-gradient(
                 -30deg,
-                white,
+                rgba(255, 255, 255, 0.9),
                 transparent 30%,
                 transparent 70%,
-                white
+                rgba(255, 255, 255, 0.9)
             );
             pointer-events: none;
-            z-index: 2;
+            z-index: 4;
         }
 
         &__overlay-2 {
-            opacity: 0.5;
+            opacity: 0.45;
         }
 
         &__background-glow {
             display: block;
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            border-radius: 16px;
             filter: blur(32px);
             transform: scale(1.1);
-            opacity: 0.3;
+            opacity: 0.25;
             z-index: 0;
             background: linear-gradient(
                 -30deg,
-                var(--electric-light-color),
+                rgba(255, 180, 90, 0.9),
                 transparent,
-                var(--electric-border-color)
+                rgba(255, 140, 40, 0.9)
             );
             pointer-events: none;
         }

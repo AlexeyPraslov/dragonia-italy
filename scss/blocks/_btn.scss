@@ -1,7 +1,10 @@
 // ================= BUTTONS =================
 .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 55px;
-    padding: 0 40px;
+    padding: 0 44px;
     width: fit-content;
     border: none;
     cursor: pointer;
@@ -58,7 +61,7 @@
 
     @include vp-1023 {
         height: 48px;
-        padding: 0 37px;
+        padding: 0 40px;
         font-size: 14px;
     }
 

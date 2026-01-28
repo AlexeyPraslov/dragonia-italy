@@ -35,5 +35,9 @@
         @include vp-767 {
             gap: 32px;
         }
+
+        @include vp-480 {
+            gap: 0;
+        }
     }
 }

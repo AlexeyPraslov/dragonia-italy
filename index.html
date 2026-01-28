@@ -8,1333 +8,1320 @@
     <meta name="description"
         content="🎰 Dragonia Casino offre bonus di benvenuto fino a 500 € + 200 giri gratis. Oltre 10.000 giochi, pagamenti cripto e promozioni esclusive. Gioca ora! 🔥">
 
+    <link rel="icon" href="images/favicons/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicons/favicon-16x16.png">
+    <link rel="manifest" href="images/favicons/site.webmanifest">
+
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
+    <svg class="svg-defs" xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0">
+        <defs>
+            <filter id="turbulent-displace" x="-20%" y="-20%" width="140%" height="140%"
+                color-interpolation-filters="sRGB">
 
-    <body>
-        <svg class="svg-defs">
-            <defs>
-                <filter id="turbulent-displace" colorInterpolationFilters="sRGB" x="-20%" y="-20%" width="140%"
-                    height="140%">
-                    <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="10" result="noise1" seed="1" />
-                    <feOffset in="noise1" dx="0" dy="0" result="offsetNoise1">
-                        <animate attributeName="dy" values="700; 0" dur="6s" repeatCount="indefinite"
-                            calcMode="linear" />
-                    </feOffset>
-                    <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="10" result="noise2" seed="1" />
-                    <feOffset in="noise2" dx="0" dy="0" result="offsetNoise2">
-                        <animate attributeName="dy" values="0; -700" dur="6s" repeatCount="indefinite"
-                            calcMode="linear" />
-                    </feOffset>
-                    <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="10" result="noise1" seed="2" />
-                    <feOffset in="noise1" dx="0" dy="0" result="offsetNoise3">
-                        <animate attributeName="dx" values="490; 0" dur="6s" repeatCount="indefinite"
-                            calcMode="linear" />
-                    </feOffset>
-                    <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="10" result="noise2" seed="2" />
-                    <feOffset in="noise2" dx="0" dy="0" result="offsetNoise4">
-                        <animate attributeName="dx" values="0; -490" dur="6s" repeatCount="indefinite"
-                            calcMode="linear" />
-                    </feOffset>
-                    <feComposite in="offsetNoise1" in2="offsetNoise2" result="part1" />
-                    <feComposite in="offsetNoise3" in2="offsetNoise4" result="part2" />
-                    <feBlend in="part1" in2="part2" mode="color-dodge" result="combinedNoise" />
-                    <feDisplacementMap in="SourceGraphic" in2="combinedNoise" scale="30" xChannelSelector="R"
-                        yChannelSelector="B" />
-                </filter>
-            </defs>
-        </svg>
+                <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="10" seed="1" result="noiseA" />
+                <feOffset in="noiseA" dx="0" dy="0" result="offsetA">
+                    <animate attributeName="dy" values="700;0" dur="6s" repeatCount="indefinite" />
+                </feOffset>
 
-        <header class="header">
-            <div class="container">
-                <div class="header__content">
-                    <a href="#" class="header__logo" id="logoLink">
-                        <img class="header__logo-img" src="./images/icon/logo.webp" width="274" height="46" alt="logo">
+                <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="10" seed="1" result="noiseB" />
+                <feOffset in="noiseB" dx="0" dy="0" result="offsetB">
+                    <animate attributeName="dy" values="0;-700" dur="6s" repeatCount="indefinite" />
+                </feOffset>
+
+                <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="10" seed="2" result="noiseC" />
+                <feOffset in="noiseC" dx="0" dy="0" result="offsetC">
+                    <animate attributeName="dx" values="490;0" dur="6s" repeatCount="indefinite" />
+                </feOffset>
+
+                <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="10" seed="2" result="noiseD" />
+                <feOffset in="noiseD" dx="0" dy="0" result="offsetD">
+                    <animate attributeName="dx" values="0;-490" dur="6s" repeatCount="indefinite" />
+                </feOffset>
+
+                <feComposite in="offsetA" in2="offsetB" result="part1" />
+                <feComposite in="offsetC" in2="offsetD" result="part2" />
+                <feBlend in="part1" in2="part2" mode="color-dodge" result="combinedNoise" />
+
+                <feDisplacementMap in="SourceGraphic" in2="combinedNoise" scale="30" xChannelSelector="R"
+                    yChannelSelector="B" />
+            </filter>
+        </defs>
+    </svg>
+
+
+    <header class="header">
+        <div class="container">
+            <div class="header__content">
+                <a href="#" class="header__logo" id="logoLink">
+                    <img class="header__logo-img" src="./images/icon/logo.webp" width="274" height="46" alt="logo">
+                </a>
+                <a class="btn btn--primary" href="{{link}}">ISCRIVERE</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <picture class="hero__image">
+            <source media="(max-width: 767px)" srcset="images/dragonia-m.webp 1x, images/dragonia-m@2x.webp 2x"
+                type="image/webp">
+            <source media="(min-width: 768px) and (max-width: 1023px)"
+                srcset="images/dragonia-m.webp 1x, images/dragonia-m@2x.webp 2x" type="image/webp">
+            <img src="images/dragonia-d.webp" srcset="images/dragonia-d@2x.webp 2x" alt="Interfejs gry Dragonia Casino"
+                loading="lazy">
+        </picture>
+        <div class="container">
+            <div class="hero__content">
+                <h1 class="hero__title">
+                    <span class="hero__title-part-1">Dragonia Casino</span>
+                    <span class="hero__title-part-2">Recensione Completa e Bonus 2026
+                    </span>
+                </h1>
+
+                <a class="btn btn--secondary" href="{{link}}">ISCRIVITI ORA</a>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="hero-description">
+        <h2 class="visually-hidden">descrizione del casinò</h2>
+        <div class="container">
+            <p class="hero-description__text">L'ingresso di Dragonia casino nel settore del gioco d'azzardo
+                online
+                offre agli appassionati una piattaforma moderna, caratterizzata da una vasta libreria di titoli
+                e
+                meccaniche di gamification avanzate. Gestita da Nova Forge Ltd, questa piattaforma si distingue
+                per
+                un'interfaccia intuitiva che unisce le classiche slot machine a un robusto sportsbook.
+                L'obiettivo
+                di questa recensione di Dragonia è analizzare in modo imparziale ogni aspetto del sito, dalla
+                sicurezza dei pagamenti alla varietà delle promozioni, per capire se soddisfa le aspettative dei
+                giocatori alla ricerca di un'esperienza completa e affidabile.
+            </p>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="games">
+        <div class="container">
+            <div class="games__content">
+                <h2 class="games__title">Popular Games</h2>
+                <div class="game-cards-grid">
+
+                    <a href="{{link}}" class="game-card">
+                        <div class="game-card__inner">
+                            <div class="game-card__border-outer">
+                                <div class="game-card__main"></div>
+                            </div>
+                            <div class="game-card__glow-1"></div>
+                            <div class="game-card__glow-2"></div>
+                        </div>
+                        <div class="game-card__overlay-1"></div>
+                        <div class="game-card__overlay-2"></div>
+                        <div class="game-card__background-glow"></div>
+                        <img class="game-card__image" src="images/cards/card-1.webp" alt="Wild Vegas">
+                        <div class="game-card__hover">
+                            <div class="game-card__title">BLUE WIZARD</div>
+                            <span class="game-card__play">Play</span>
+                        </div>
                     </a>
-                    <button class="btn btn--primary">ISCRIVERE</button>
+
+                    <a href="{{link}}" class="game-card">
+                        <div class="game-card__inner">
+                            <div class="game-card__border-outer">
+                                <div class="game-card__main"></div>
+                            </div>
+                            <div class="game-card__glow-1"></div>
+                            <div class="game-card__glow-2"></div>
+                        </div>
+                        <div class="game-card__overlay-1"></div>
+                        <div class="game-card__overlay-2"></div>
+                        <div class="game-card__background-glow"></div>
+                        <img class="game-card__image" src="images/cards/cart-2.webp" alt="Aztec Gold">
+                        <div class="game-card__hover">
+                            <div class="game-card__title">BOOK OF RA</div>
+                            <span class="game-card__play">Play</span>
+                        </div>
+                    </a>
+
+                    <a href="{{link}}" class="game-card">
+                        <div class="game-card__inner">
+                            <div class="game-card__border-outer">
+                                <div class="game-card__main"></div>
+                            </div>
+                            <div class="game-card__glow-1"></div>
+                            <div class="game-card__glow-2"></div>
+                        </div>
+                        <div class="game-card__overlay-1"></div>
+                        <div class="game-card__overlay-2"></div>
+                        <div class="game-card__background-glow"></div>
+                        <img class="game-card__image" src="images/cards/cart-3.webp" alt="Hot Spins">
+                        <div class="game-card__hover">
+                            <div class="game-card__title">BANDIDOS BANGE</div>
+                            <span class="game-card__play">Play</span>
+                        </div>
+                    </a>
+
+                    <a href="{{link}}" class="game-card">
+                        <div class="game-card__inner">
+                            <div class="game-card__border-outer">
+                                <div class="game-card__main"></div>
+                            </div>
+                            <div class="game-card__glow-1"></div>
+                            <div class="game-card__glow-2"></div>
+                        </div>
+                        <div class="game-card__overlay-1"></div>
+                        <div class="game-card__overlay-2"></div>
+                        <div class="game-card__background-glow"></div>
+                        <img class="game-card__image" src="images/cards/cart-4.webp" alt="Mega Fortune">
+                        <div class="game-card__hover">
+                            <div class="game-card__title">KRAKEN BAY</div>
+                            <span class="game-card__play">Play</span>
+                        </div>
+                    </a>
+
+                    <a href="{{link}}" class="game-card">
+                        <div class="game-card__inner">
+                            <div class="game-card__border-outer">
+                                <div class="game-card__main"></div>
+                            </div>
+                            <div class="game-card__glow-1"></div>
+                            <div class="game-card__glow-2"></div>
+                        </div>
+                        <div class="game-card__overlay-1"></div>
+                        <div class="game-card__overlay-2"></div>
+                        <div class="game-card__background-glow"></div>
+                        <img class="game-card__image" src="images/cards/cart-5.webp" alt="Fruit Blaze">
+                        <div class="game-card__hover">
+                            <div class="game-card__title">ROMAN FORTUNE</div>
+                            <span class="game-card__play">Play</span>
+                        </div>
+                    </a>
+
+                    <a href="{{link}}" class="game-card">
+                        <div class="game-card__inner">
+                            <div class="game-card__border-outer">
+                                <div class="game-card__main"></div>
+                            </div>
+                            <div class="game-card__glow-1"></div>
+                            <div class="game-card__glow-2"></div>
+                        </div>
+                        <div class="game-card__overlay-1"></div>
+                        <div class="game-card__overlay-2"></div>
+                        <div class="game-card__background-glow"></div>
+                        <img class="game-card__image" src="images/cards/cart-6.webp" alt="Lucky 7">
+                        <div class="game-card__hover">
+                            <div class="game-card__title">DETECTIVE FORTUNE</div>
+                            <span class="game-card__play">Play</span>
+                        </div>
+                    </a>
+
+                    <a href="{{link}}" class="game-card">
+                        <div class="game-card__inner">
+                            <div class="game-card__border-outer">
+                                <div class="game-card__main"></div>
+                            </div>
+                            <div class="game-card__glow-1"></div>
+                            <div class="game-card__glow-2"></div>
+                        </div>
+                        <div class="game-card__overlay-1"></div>
+                        <div class="game-card__overlay-2"></div>
+                        <div class="game-card__background-glow"></div>
+                        <img class="game-card__image" src="images/cards/cart-7.webp" alt="Diamond Rush">
+                        <div class="game-card__hover">
+                            <div class="game-card__title">BANDIDOS CASH</div>
+                            <span class="game-card__play">Play</span>
+                        </div>
+                    </a>
+
+                    <a href="{{link}}" class="game-card">
+                        <div class="game-card__inner">
+                            <div class="game-card__border-outer">
+                                <div class="game-card__main"></div>
+                            </div>
+                            <div class="game-card__glow-1"></div>
+                            <div class="game-card__glow-2"></div>
+                        </div>
+                        <div class="game-card__overlay-1"></div>
+                        <div class="game-card__overlay-2"></div>
+                        <div class="game-card__background-glow"></div>
+                        <img class="game-card__image" src="images/cards/cart-8.webp" alt="Pirate's Treasure">
+                        <div class="game-card__hover">
+                            <div class="game-card__title">FARM HUNT</div>
+                            <span class="game-card__play">Play</span>
+                        </div>
+                    </a>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="info">
+        <div class="container">
+            <div class="info__content">
+                <h2 class="info__title">Dati essenziali su Dragonia casino</h2>
+                <p class="info__text">Per comprendere rapidamente l'offerta di questo operatore, è utile esaminare i
+                    dati chiave che ne definiscono l'identità operativa. Dragonia casino si presenta come un hub
+                    multifunzionale, accessibile sia da desktop che da dispositivi mobili, garantendo un ambiente
+                    regolamentato.
+                </p>
+
+                <p class="info__text">Di seguito, una sintesi degli elementi fondamentali del brand:</p>
+                <ul class="content-list">
+                    <li class="content-list__item"><strong>Operatore - </strong>Nova Forge Ltd</li>
+                    <li class="content-list__item"><strong>Licenza - </strong>Licenza di Anjouan (Comoros) 🇰🇲</li>
+                    <li class="content-list__item"><strong>Prodotti - </strong>Casinò, Casinò Live, Scommesse
+                        Sportive,
+                        Virtuali</li>
+                    <li class="content-list__item"><strong>Totale Giochi - </strong>Oltre 11.300 giochi</li>
+                    <li class="content-list__item"><strong>Bonus di Benvenuto - </strong>100% fino a 500 € + 200
+                        giri
+                        gratuiti + 1 Bonus Crab</li>
+                    <li class="content-list__item"><strong>Deposito Minimo - </strong>10 €</li>
+                    <li class="content-list__item"><strong>Prelievo Massimo - </strong>Fino a 20.000 € al mese (in
+                        base
+                        al livello VIP)</li>
+                    <li class="content-list__item"><strong>Supporto - </strong>Chat dal vivo 24/7, Email</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+
+    <section class="features">
+        <div class="container">
+            <div class="features__content">
+                <h2 class="features__title">I Migliori giochi in Italia</h2>
+                <div class="slider">
+                    <div class="slider__arrow slider__arrow--left">‹</div>
+                    <div class="slider__arrow slider__arrow--right">›</div>
+
+                    <div class="slider__track">
+                        <a href="{{link}}" class="card card--image">
+                            <img class="card__bg" src="images/cards/card-game-1.webp" alt="Piggy Banks" loading="lazy">
+                            <span class="card__label">Piggy Banks</span>
+                        </a>
+
+                        <a href="{{link}}" class="card card--image">
+                            <img class="card__bg" src="images/cards/card-game-2.webp" alt="Wings Of Fire"
+                                loading="lazy">
+                            <span class="card__label">Wings Of Fire</span>
+                        </a>
+
+                        <a href="{{link}}" class="card card--image">
+                            <img class="card__bg" src="images/cards/card-game-3.webp" alt="Boost Hot" loading="lazy">
+                            <span class="card__label">Boost Hot</span>
+                        </a>
+
+                        <a href="{{link}}" class="card card--image">
+                            <img class="card__bg" src="images/cards/card-game-4.webp" alt="Double Dragon"
+                                loading="lazy">
+                            <span class="card__label">Double Dragon</span>
+                        </a>
+
+                        <a href="{{link}}" class="card card--image">
+                            <img class="card__bg" src="images/cards/card-game-5.webp" alt="Rock & Riches"
+                                loading="lazy">
+                            <span class="card__label">Rock & Riches</span>
+                        </a>
+
+
+                        <a href="{{link}}" class="card card--image">
+                            <img class="card__bg" src="images/cards/card-game-6.webp" alt="Trumpit Coin Link"
+                                loading="lazy">
+                            <span class="card__label">Trumpit Coin Link</span>
+                        </a>
+
+
+                        <a href="{{link}}" class="card card--image">
+                            <img class="card__bg" src="images/cards/card-game-7.webp" alt="Mega Fortune" loading="lazy">
+                            <span class="card__label">Mega Fortune</span>
+                        </a>
+
+
+                        <a href="{{link}}" class="card card--image">
+                            <img class="card__bg" src="images/cards/card-game-8.webp" alt="Fruit Blaze" loading="lazy">
+                            <span class="card__label">Le Santa</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="bonus">
+        <div class="container">
+            <div class="bonus__content">
+                <h2 class="bonus__title">Pacchetto bonus e promozioni in Dragonia casino</h2>
+                <p class="bonus__text">La sezione promozionale rappresenta uno dei punti di forza dell'operatore,
+                    con offerte che coprono sia i nuovi iscritti che gli utenti abituali. Dragonia casino ha
+                    strutturato un bonus di benvenuto versatile, pensato per adattarsi alle diverse tipologie di
+                    giocatore, affiancato da incentivi settimanali che mantengono alto il valore
+                    dell'intrattenimento.
+                </p>
+
+                <p class="bonus__table-title">La tabella seguente illustra le offerte principali disponibili per il
+                    primo deposito:</p>
+
+                <div class="table-container">
+                    <table class="table">
+                        <thead class="table__head">
+                            <tr class="table__row">
+                                <th class="table__cell table__cell--head">Tipologia Bonus</th>
+                                <th class="table__cell table__cell--head">Valore dell'offerta</th>
+                                <th class="table__cell table__cell--head">Requisiti di Scommessa</th>
+                                <th class="table__cell table__cell--head">Deposito Minimo</th>
+                            </tr>
+                        </thead>
+                        <tbody class="table__body">
+                            <tr class="table__row">
+                                <td class="table__cell">Benvenuto Casinò</td>
+                                <td class="table__cell">100% fino a 500 € + 200 giri gratuiti + 1 Bonus Crab</td>
+                                <td class="table__cell">35x (deposito + bonus); 40x (giri)</td>
+                                <td class="table__cell">20 € (10 € per 1 Bonus Crab)</td>
+                            </tr>
+                            <tr class="table__row">
+                                <td class="table__cell">Benvenuto Sport</td>
+                                <td class="table__cell">100% fino a 150 € (Esclusivo Italia)</td>
+                                <td class="table__cell">6x (deposito + bonus)</td>
+                                <td class="table__cell">20 €</td>
+                            </tr>
+                            <tr class="table__row">
+                                <td class="table__cell">High Roller (W/E)</td>
+                                <td class="table__cell">50% fino a 700 € + 50 giri gratuiti</td>
+                                <td class="table__cell">35x (deposito + bonus)</td>
+                                <td class="table__cell">50 €</td>
+                            </tr>
+                            <tr class="table__row">
+                                <td class="table__cell">Cashback Settimanale</td>
+                                <td class="table__cell">15% fino a 3.000 € (Livelli VIP)</td>
+                                <td class="table__cell">1x (sul cashback erogato)</td>
+                                <td class="table__cell">N/A</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3 class="bonus__subtitle">Altre offerte attive sulla piattaforma</h3>
+                <p class="bonus__text">Oltre al bonus di benvenuto, il casinò Dragonia mantiene viva l'attenzione
+                    con promozioni ricorrenti legate sia all'attività nelle slot che nelle scommesse sportive.
+                    Queste offerte includono ricariche nel fine settimana, cashback per il casinò live e funzioni
+                    speciali per le schedine multiple.
+                </p>
+                <p class="bonus__table-title">Ecco le principali promozioni aggiuntive attive:</p>
+                <ul class="content-list">
+
+                    <li class="content-list__item"><strong>Ricarica Settimanale: </strong>50 giri gratuiti
+                        disponibili dal lunedì al giovedì su un deposito minimo di 20 €</li>
+                    <li class="content-list__item"><strong>Cashback Live: </strong>un ritorno del 25% fino a 200 €
+                        sulle perdite nette nei giochi con croupier dal vivo</li>
+                    <li class="content-list__item"><strong>Accumulator Boost: </strong>potenziamento delle vincite
+                        fino al 100% sulle scommesse multiple con almeno 3 eventi</li>
+                    <li class="content-list__item"><strong>2 Goal di Vantaggio: </strong>pagamento anticipato della
+                        scommessa se la squadra scelta va in vantaggio di due gol</li>
+                    <li class="content-list__item"><strong>Tornei: </strong>competizioni regolari come "Slot of the
+                        Week" o "Monthly Race" con montepremi in denaro o Coins</li>
+
+                </ul>
+
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <div class="cta">
+        <img class="cta__bg" src="images/bg-cta-1.webp" alt="bunner CTA" loading="lazy">
+
+        <div class="container">
+            <div class="cta__content">
+                <div class="cta__title">250% BONUS DI BENVENUTO</div>
+
+                <div class="cta__actions">
+
+                    <a class="btn btn--secondary" href="{{link}}">Scopri di più</a>
                 </div>
             </div>
-        </header>
+        </div>
+    </div>
 
-        <section class="hero">
-            <picture class="hero__image">
-                <source media="(max-width: 767px)" srcset="images/dragonia-m.webp 1x, images/dragonia-m@2x.webp 2x"
-                    type="image/webp">
-                <source media="(min-width: 768px) and (max-width: 1023px)"
-                    srcset="images/dragonia-m.webp 1x, images/dragonia-m@2x.webp 2x" type="image/webp">
-                <img src="images/dragonia-d.webp" srcset="images/dragonia-d@2x.webp 2x"
-                    alt="Interfejs gry Dragonia Casino" loading="lazy">
-            </picture>
-            <div class="container">
-                <div class="hero__content">
-                    <h1 class="hero__title">
-                        <span class="hero__title-part-1">Dragonia Casino</span>
-                        <span class="hero__title-part-2">Recensione Completa e Bonus 2026
-                        </span>
-                    </h1>
+    <div class="divider"></div>
 
-                    <button class="btn btn--secondary">ISCRIVITI ORA</button>
+    <section class="registration">
+        <div class="container">
+            <div class="registration__content">
+                <h2 class="registration__title">Registrazione a Dragonia casino</h2>
+                <p class="registration__text">Aprire un account su Dragonia casino richiede pochi minuti e una
+                    procedura
+                    standardizzata che assicura la conformità con le normative internazionali. Il sistema guida
+                    l'utente
+                    passo dopo passo, permettendo di scegliere subito il bonus desiderato.</p>
+                <p class="registration__list-subtitle">I passaggi necessari per completare l'iscrizione sono:</p>
+                <ul class="content-list">
+
+                    <li class="content-list__item"><strong>Passaggio 1: </strong>Cliccare sul pulsante di
+                        registrazione
+                        presente nella schermata iniziale del sito ufficiale</li>
+                    <li class="content-list__item"><strong>Passaggio 2: </strong>Selezionare il bonus preferito
+                        (Casinò,
+                        Sport o codice promozionale)</li>
+                    <li class="content-list__item"><strong>Passaggio 3: </strong>Inserire l'indirizzo email e creare
+                        una
+                        password sicura</li>
+                    <li class="content-list__item"><strong>Passaggio 4: </strong>Confermare di avere più di 18 anni
+                        e
+                        accettare Termini e Condizioni</li>
+                    <li class="content-list__item"><strong>Passaggio 5: </strong>Compilare il modulo con i dati
+                        anagrafici (Nome, Cognome, Indirizzo)</li>
+                    <li class="content-list__item"><strong>Passaggio 6: </strong>Selezionare "Italy" come paese e
+                        "EUR"
+                        come valuta</li>
+                    <li class="content-list__item"><strong>Passaggio 7: </strong>Cliccare su "Crea Account" per
+                        finalizzare l'operazione</li>
+
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="catalog">
+        <div class="container">
+            <div class="catalog__content">
+                <h2 class="catalog__title">Catalogo giochi di Dragonia</h2>
+                <p class="catalog__text">L'offerta ludica di Dragonia casino è vasta e ben organizzata, progettata
+                    per soddisfare i gusti eterogenei dei giocatori italiani. La piattaforma ospita una libreria
+                    imponente grazie alla collaborazione con numerosi fornitori di software di alto livello,
+                    garantendo varietà sia nelle tematiche che nelle meccaniche di gioco. La struttura del sito
+                    permette di filtrare facilmente tra migliaia di opzioni.</p>
+
+                <h3 class="catalog__subtitle">I fornitori di software</h3>
+
+                <p class="catalog__text">Il casinò opera con brand riconosciuti a livello mondiale, assicurando che
+                    ogni titolo rispetti elevati standard di qualità e casualità (RNG).</p>
+
+                <p class="catalog__list-title">La suddivisione dei provider include:</p>
+
+
+                <div class="electric-cards">
+
+                    <div class="electric-card">
+                        <div class="electric-card__inner">
+                            <div class="electric-card__border-outer">
+                                <div class="electric-card__main"></div>
+                            </div>
+                            <div class="electric-card__glow-1"></div>
+                            <div class="electric-card__glow-2"></div>
+                        </div>
+                        <div class="electric-card__overlay-1"></div>
+                        <div class="electric-card__overlay-2"></div>
+                        <div class="electric-card__background-glow"></div>
+                        <div class="electric-card__content">
+                            <div class="electric-card__content-top">
+                                <div class="electric-card__badge">Leader</div>
+                                <p class="electric-card__title">Tier 1 (Leader di settore)</p>
+                            </div>
+                            <div class="electric-card__divider"></div>
+                            <div class="electric-card__content-bottom">
+                                <p class="electric-card__description">Playtech (623+ giochi), Pragmatic Play,
+                                    Spinomenal (700+ titoli), Yggdrasil</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="electric-card">
+                        <div class="electric-card__inner">
+                            <div class="electric-card__border-outer">
+                                <div class="electric-card__main"></div>
+                            </div>
+                            <div class="electric-card__glow-1"></div>
+                            <div class="electric-card__glow-2"></div>
+                        </div>
+                        <div class="electric-card__overlay-1"></div>
+                        <div class="electric-card__overlay-2"></div>
+                        <div class="electric-card__background-glow"></div>
+                        <div class="electric-card__content">
+                            <div class="electric-card__content-top">
+                                <div class="electric-card__badge">Innovatori</div>
+                                <p class="electric-card__title">Tier 2 (Popolari & Innovativi)</p>
+                            </div>
+                            <div class="electric-card__divider"></div>
+                            <div class="electric-card__content-bottom">
+                                <p class="electric-card__description">Hacksaw Gaming, Red Tiger, Relax Gaming,
+                                    Thunderkick, Nolimit City</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="electric-card">
+                        <div class="electric-card__inner">
+                            <div class="electric-card__border-outer">
+                                <div class="electric-card__main"></div>
+                            </div>
+                            <div class="electric-card__glow-1"></div>
+                            <div class="electric-card__glow-2"></div>
+                        </div>
+                        <div class="electric-card__overlay-1"></div>
+                        <div class="electric-card__overlay-2"></div>
+                        <div class="electric-card__background-glow"></div>
+                        <div class="electric-card__content">
+                            <div class="electric-card__content-top">
+                                <div class="electric-card__badge">Live</div>
+                                <p class="electric-card__title">Specialisti Live</p>
+                            </div>
+                            <div class="electric-card__divider"></div>
+                            <div class="electric-card__content-bottom">
+                                <p class="electric-card__description">Evolution, Pragmatic Live, Bombay Live, Ezugi
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="electric-card">
+                        <div class="electric-card__inner">
+                            <div class="electric-card__border-outer">
+                                <div class="electric-card__main"></div>
+                            </div>
+                            <div class="electric-card__glow-1"></div>
+                            <div class="electric-card__glow-2"></div>
+                        </div>
+                        <div class="electric-card__overlay-1"></div>
+                        <div class="electric-card__overlay-2"></div>
+                        <div class="electric-card__background-glow"></div>
+                        <div class="electric-card__content">
+                            <div class="electric-card__content-top">
+                                <div class="electric-card__badge">Esclusive</div>
+                                <p class="electric-card__title">Provider di nicchia</p>
+                            </div>
+                            <div class="electric-card__divider"></div>
+                            <div class="electric-card__content-bottom">
+                                <p class="electric-card__description">Swintt, Tom Horn, Spribe (noto per i giochi
+                                    crash)</p>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
 
-            </div>
-        </section>
+                <h3 class="catalog__subtitle">Le Slot machine</h3>
+                <p class="catalog__text">La sezione dedicata alle slot è il cuore pulsante del sito, con un
+                    assortimento che spazia dalle classiche a 3 rulli fino alle più moderne video slot con funzioni
+                    complesse. Dragonia casino offre opzioni per filtrare i giochi per popolarità, novità o
+                    funzionalità specifiche come l'acquisto del bonus.</p>
 
-        <section class="hero-description">
-            <h2 class="visually-hidden">descrizione del casinò</h2>
-            <div class="container">
-                <p class="hero-description__text">L'ingresso di Dragonia casino nel settore del gioco d'azzardo
-                    online
-                    offre agli appassionati una piattaforma moderna, caratterizzata da una vasta libreria di titoli
-                    e
-                    meccaniche di gamification avanzate. Gestita da Nova Forge Ltd, questa piattaforma si distingue
-                    per
-                    un'interfaccia intuitiva che unisce le classiche slot machine a un robusto sportsbook.
-                    L'obiettivo
-                    di questa recensione di Dragonia è analizzare in modo imparziale ogni aspetto del sito, dalla
-                    sicurezza dei pagamenti alla varietà delle promozioni, per capire se soddisfa le aspettative dei
-                    giocatori alla ricerca di un'esperienza completa e affidabile.
+                <p class="catalog__list-title">Ecco alcune delle categorie e titoli di punta disponibili:</p>
+
+                <div class="table-container">
+                    <table class="table">
+                        <thead class="table__head">
+                            <tr class="table__row">
+                                <th class="table__cell table__cell--head">Categoria</th>
+                                <th class="table__cell table__cell--head">Titoli di Esempio</th>
+                                <th class="table__cell table__cell--head">Caratteristiche Principali</th>
+                            </tr>
+                        </thead>
+                        <tbody class="table__body">
+                            <tr class="table__row">
+                                <td class="table__cell">Top Popolari</td>
+                                <td class="table__cell">Book of Ra, Starburst, Gonzo’s Quest</td>
+                                <td class="table__cell">Giochi iconici con meccaniche collaudate e alto gradimento
+                                </td>
+                            </tr>
+                            <tr class="table__row">
+                                <td class="table__cell">Bonus Buy</td>
+                                <td class="table__cell">Wanted Dead or a Wild, Sweet Candy Blitz</td>
+                                <td class="table__cell">Possibilità di acquistare l'accesso diretto ai giri gratuiti
+                                </td>
+                            </tr>
+                            <tr class="table__row">
+                                <td class="table__cell">Megaways</td>
+                                <td class="table__cell">Pirate Kingdom Megaways, Gonzo's Quest Megaways</td>
+                                <td class="table__cell">Migliaia di modi per vincere e rulli dinamici</td>
+                            </tr>
+                            <tr class="table__row">
+                                <td class="table__cell">Jackpot</td>
+                                <td class="table__cell">Dynamite Riches, 10,001 Nights, Age of the Gods</td>
+                                <td class="table__cell">Titoli con montepremi progressivi o fissi</td>
+                            </tr>
+                            <tr class="table__row">
+                                <td class="table__cell">Instant Games</td>
+                                <td class="table__cell">Aviator, Plinko, Mines</td>
+                                <td class="table__cell">Giochi veloci con risultati immediati</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3 class="catalog__subtitle">Casinò Live</h3>
+                <p class="catalog__text">Per chi cerca un'esperienza più immersiva, la sezione casinò live di
+                    Dragonia casino offre tavoli in streaming ad alta definizione. Qui è possibile interagire con
+                    veri dealer e partecipare a show televisivi interattivi. La selezione copre tutti i classici e
+                    introduce varianti moderne.
+                </p>
+
+                <p class="catalog__list-title">Le opzioni principali includono:</p>
+
+                <ul class="content-list">
+                    <li class="content-list__item"><strong>Roulette: </strong>Immersive Roulette, Lightning
+                        Roulette, tavoli in lingua italiana e varianti speed</li>
+                    <li class="content-list__item"><strong>Blackjack: </strong>Infinite Blackjack, Power Blackjack e
+                        tavoli VIP per puntate elevate</li>
+                    <li class="content-list__item"><strong>Baccarat & Dadi: </strong>Speed Baccarat, No Commission
+                        Baccarat, Sic Bo e Dragon Tiger</li>
+                    <li class="content-list__item"><strong>Game Show: </strong>Crazy Time, Monopoly Live, Sweet
+                        Bonanza CandyLand, Funky Time</li>
+                </ul>
+
+                <h3 class="catalog__subtitle">Giochi da tavolo RNG</h3>
+                <p class="catalog__text">Chi preferisce i giochi da tavolo in versione software, dove è possibile
+                    dettare il proprio ritmo senza un timer dal vivo, troverà una sezione dedicata. Dragonia casino
+                    propone diverse varianti di poker, roulette e carte.</p>
+
+                <div class="electric-cards">
+
+                    <div class="electric-card">
+                        <div class="electric-card__inner">
+                            <div class="electric-card__border-outer">
+                                <div class="electric-card__main"></div>
+                            </div>
+                            <div class="electric-card__glow-1"></div>
+                            <div class="electric-card__glow-2"></div>
+                        </div>
+                        <div class="electric-card__overlay-1"></div>
+                        <div class="electric-card__overlay-2"></div>
+                        <div class="electric-card__background-glow"></div>
+                        <div class="electric-card__content">
+                            <div class="electric-card__content-top">
+                                <img class="electric-card__img" src="images/icon/icon-blackjack.webp" width="60"
+                                    height="60" alt="Blackjack">
+                                <div class="electric-card__badge">giochi di societa</div>
+                                <p class="electric-card__title">Carte</p>
+                            </div>
+                            <div class="electric-card__divider"></div>
+                            <div class="electric-card__content-bottom">
+                                <p class="electric-card__description">Single Deck Blackjack, Multihand Blackjack,
+                                    Caribbean Stud Poker, Texas Hold'em</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="electric-card">
+                        <div class="electric-card__inner">
+                            <div class="electric-card__border-outer">
+                                <div class="electric-card__main"></div>
+                            </div>
+                            <div class="electric-card__glow-1"></div>
+                            <div class="electric-card__glow-2"></div>
+                        </div>
+                        <div class="electric-card__overlay-1"></div>
+                        <div class="electric-card__overlay-2"></div>
+                        <div class="electric-card__background-glow"></div>
+                        <div class="electric-card__content">
+                            <div class="electric-card__content-top">
+                                <img class="electric-card__img" src="images/icon/icon-roulette.webp" width="60"
+                                    height="60" alt="roulette">
+                                <div class="electric-card__badge">giochi di societa</div>
+                                <p class="electric-card__title">Roulette</p>
+                            </div>
+                            <div class="electric-card__divider"></div>
+                            <div class="electric-card__content-bottom">
+                                <p class="electric-card__description">European Roulette, American Roulette, French
+                                    Roulette (La Partage)</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="electric-card">
+                        <div class="electric-card__inner">
+                            <div class="electric-card__border-outer">
+                                <div class="electric-card__main"></div>
+                            </div>
+                            <div class="electric-card__glow-1"></div>
+                            <div class="electric-card__glow-2"></div>
+                        </div>
+                        <div class="electric-card__overlay-1"></div>
+                        <div class="electric-card__overlay-2"></div>
+                        <div class="electric-card__background-glow"></div>
+                        <div class="electric-card__content">
+                            <div class="electric-card__content-top">
+                                <img class="electric-card__img" src="images/icon/icon-pocker.webp" width="60"
+                                    height="60" alt="Pocker">
+                                <div class="electric-card__badge">giochi di societa</div>
+                                <p class="electric-card__title">Video Poker</p>
+                            </div>
+                            <div class="electric-card__divider"></div>
+                            <div class="electric-card__content-bottom">
+                                <p class="electric-card__description">Jacks or Better, Deuces Wild, Aces & Eights
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <h3 class="catalog__subtitle">Altre categorie di intrattenimento</h3>
+                <p class="catalog__list-title">Per completare l'offerta, il sito include sezioni meno convenzionali
+                    ma molto apprezzate:</p>
+                <ul class="content-list">
+                    <li class="content-list__item"><strong>Crash Games: </strong>Titoli come Aviator e JetX dove il
+                        tempismo nel prelievo è tutto</li>
+                    <li class="content-list__item"><strong>Bonus Crab: </strong>Un gioco ad artiglio unico
+                        (esclusiva della piattaforma) che permette di convertire crediti in premi reali, bonus o
+                        gettoni</li>
+                </ul>
+
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="sports-betting">
+        <div class="container">
+            <div class="sports-betting__content">
+                <h2 class="sports-betting__title">Scommesse sportive su Dragonia</h2>
+                <p class="sports-betting__text">La sezione sportiva è curata con attenzione e rappresenta un
+                    pilastro importante dell'offerta complessiva. Dragonia offre un palinsesto competitivo che copre
+                    migliaia di eventi giornalieri, spaziando dai campionati maggiori agli sport di nicchia.</p>
+                <p class="sports-betting__list-subtitle">Gli scommettitori possono sfruttare diverse modalità di
+                    puntata:</p>
+
+                <ul class="content-list">
+                    <li class="content-list__item"><strong>Scommesse Live: </strong>Una dashboard aggiornata in
+                        tempo reale per puntare mentre gli eventi sono in corso, con quote dinamiche</li>
+                    <li class="content-list__item"><strong>Pre-match: </strong>Ampia profondità di mercati su
+                        calcio, basket, tennis e molto altro</li>
+                    <li class="content-list__item"><strong>E-sports: </strong>Copertura di tornei internazionali di
+                        League of Legends, Dota 2, CS:GO e Valorant</li>
+                    <li class="content-list__item"><strong>Virtual Sports: </strong>Corse simulate di cavalli,
+                        levrieri e partite di calcio virtuale disponibili 24 ore su 24</li>
+                    <li class="content-list__item"><strong>Funzioni: </strong>Cash Out (parziale o totale) e Bet
+                        Builder per creare scommesse personalizzate all'interno dello stesso evento</li>
+                </ul>
+                <p class="sports-betting__text">Le opzioni di scommessa includono risultati finali, handicap
+                    asiatici, under/over, e marcatori, garantendo flessibilità per ogni strategia di gioco.
                 </p>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <div class="divider"></div>
+    <div class="divider"></div>
 
-        <section class="games">
-            <div class="container">
-                <div class="games__content">
-                    <h2 class="games__title">Popular Games</h2>
-                    <div class="game-cards-grid">
+    <div class="cta">
+        <img class="cta__bg" src="images/bg-cta-2.webp" alt="bunner CTA" loading="lazy">
 
-                        <a href="#" class="game-card">
-                            <div class="game-card__inner">
-                                <div class="game-card__border-outer">
-                                    <div class="game-card__main"></div>
-                                </div>
-                                <div class="game-card__glow-1"></div>
-                                <div class="game-card__glow-2"></div>
-                            </div>
-                            <div class="game-card__overlay-1"></div>
-                            <div class="game-card__overlay-2"></div>
-                            <div class="game-card__background-glow"></div>
-                            <img class="game-card__image" src="images/cards/card-1.webp" alt="Wild Vegas">
-                            <div class="game-card__hover">
-                                <div class="game-card__title">BLUE WIZARD</div>
-                                <button class="game-card__play">Play</button>
-                            </div>
-                        </a>
+        <div class="container">
+            <div class="cta__content">
+                <div class="cta__title">250% BONUS DI BENVENUTO</div>
 
-                        <a href="#" class="game-card">
-                            <div class="game-card__inner">
-                                <div class="game-card__border-outer">
-                                    <div class="game-card__main"></div>
-                                </div>
-                                <div class="game-card__glow-1"></div>
-                                <div class="game-card__glow-2"></div>
-                            </div>
-                            <div class="game-card__overlay-1"></div>
-                            <div class="game-card__overlay-2"></div>
-                            <div class="game-card__background-glow"></div>
-                            <img class="game-card__image" src="images/cards/cart-2.webp" alt="Aztec Gold">
-                            <div class="game-card__hover">
-                                <div class="game-card__title">BOOK OF RA</div>
-                                <button class="game-card__play">Play</button>
-                            </div>
-                        </a>
+                <div class="cta__actions">
 
-                        <a href="#" class="game-card">
-                            <div class="game-card__inner">
-                                <div class="game-card__border-outer">
-                                    <div class="game-card__main"></div>
-                                </div>
-                                <div class="game-card__glow-1"></div>
-                                <div class="game-card__glow-2"></div>
-                            </div>
-                            <div class="game-card__overlay-1"></div>
-                            <div class="game-card__overlay-2"></div>
-                            <div class="game-card__background-glow"></div>
-                            <img class="game-card__image" src="images/cards/cart-3.webp" alt="Hot Spins">
-                            <div class="game-card__hover">
-                                <div class="game-card__title">BANDIDOS BANGE</div>
-                                <button class="game-card__play">Play</button>
-                            </div>
-                        </a>
-
-                        <a href="#" class="game-card">
-                            <div class="game-card__inner">
-                                <div class="game-card__border-outer">
-                                    <div class="game-card__main"></div>
-                                </div>
-                                <div class="game-card__glow-1"></div>
-                                <div class="game-card__glow-2"></div>
-                            </div>
-                            <div class="game-card__overlay-1"></div>
-                            <div class="game-card__overlay-2"></div>
-                            <div class="game-card__background-glow"></div>
-                            <img class="game-card__image" src="images/cards/cart-4.webp" alt="Mega Fortune">
-                            <div class="game-card__hover">
-                                <div class="game-card__title">KRAKEN BAY</div>
-                                <button class="game-card__play">Play</button>
-                            </div>
-                        </a>
-
-                        <a href="#" class="game-card">
-                            <div class="game-card__inner">
-                                <div class="game-card__border-outer">
-                                    <div class="game-card__main"></div>
-                                </div>
-                                <div class="game-card__glow-1"></div>
-                                <div class="game-card__glow-2"></div>
-                            </div>
-                            <div class="game-card__overlay-1"></div>
-                            <div class="game-card__overlay-2"></div>
-                            <div class="game-card__background-glow"></div>
-                            <img class="game-card__image" src="images/cards/cart-5.webp" alt="Fruit Blaze">
-                            <div class="game-card__hover">
-                                <div class="game-card__title">ROMAN FORTUNE</div>
-                                <button class="game-card__play">Play</button>
-                            </div>
-                        </a>
-
-                        <a href="#" class="game-card">
-                            <div class="game-card__inner">
-                                <div class="game-card__border-outer">
-                                    <div class="game-card__main"></div>
-                                </div>
-                                <div class="game-card__glow-1"></div>
-                                <div class="game-card__glow-2"></div>
-                            </div>
-                            <div class="game-card__overlay-1"></div>
-                            <div class="game-card__overlay-2"></div>
-                            <div class="game-card__background-glow"></div>
-                            <img class="game-card__image" src="images/cards/cart-6.webp" alt="Lucky 7">
-                            <div class="game-card__hover">
-                                <div class="game-card__title">DETECTIVE FORTUNE</div>
-                                <button class="game-card__play">Play</button>
-                            </div>
-                        </a>
-
-                        <a href="#" class="game-card">
-                            <div class="game-card__inner">
-                                <div class="game-card__border-outer">
-                                    <div class="game-card__main"></div>
-                                </div>
-                                <div class="game-card__glow-1"></div>
-                                <div class="game-card__glow-2"></div>
-                            </div>
-                            <div class="game-card__overlay-1"></div>
-                            <div class="game-card__overlay-2"></div>
-                            <div class="game-card__background-glow"></div>
-                            <img class="game-card__image" src="images/cards/cart-7.webp" alt="Diamond Rush">
-                            <div class="game-card__hover">
-                                <div class="game-card__title">BANDIDOS CASH</div>
-                                <button class="game-card__play">Play</button>
-                            </div>
-                        </a>
-
-                        <a href="#" class="game-card">
-                            <div class="game-card__inner">
-                                <div class="game-card__border-outer">
-                                    <div class="game-card__main"></div>
-                                </div>
-                                <div class="game-card__glow-1"></div>
-                                <div class="game-card__glow-2"></div>
-                            </div>
-                            <div class="game-card__overlay-1"></div>
-                            <div class="game-card__overlay-2"></div>
-                            <div class="game-card__background-glow"></div>
-                            <img class="game-card__image" src="images/cards/cart-8.webp" alt="Pirate's Treasure">
-                            <div class="game-card__hover">
-                                <div class="game-card__title">FARM HUNT</div>
-                                <button class="game-card__play">Play</button>
-                            </div>
-                        </a>
-
-                    </div>
-
+                    <a class="btn btn--secondary" href="{{link}}">Scopri di più</a>
                 </div>
             </div>
-        </section>
+        </div>
+    </div>
 
-        <div class="divider"></div>
+    <div class="divider"></div>
 
-        <section class="info">
-            <div class="container">
-                <div class="info__content">
-                    <h2 class="info__title">Dati essenziali su Dragonia casino</h2>
-                    <p class="info__text">Per comprendere rapidamente l'offerta di questo operatore, è utile esaminare i
-                        dati chiave che ne definiscono l'identità operativa. Dragonia casino si presenta come un hub
-                        multifunzionale, accessibile sia da desktop che da dispositivi mobili, garantendo un ambiente
-                        regolamentato.
-                    </p>
+    <section class="gamification">
+        <div class="container">
+            <div class="gamification__content">
+                <h2 class="gamification__title">Gamification e Bonus Crab</h2>
+                <p class="gamification__text">Dragonia casino eleva l'esperienza utente attraverso un sistema di
+                    gamification integrato che premia la fedeltà e l'attività costante. Non si tratta solo di girare
+                    i rulli, ma di avanzare in un percorso che offre ricompense tangibili.</p>
 
-                    <p class="info__text">Di seguito, una sintesi degli elementi fondamentali del brand:</p>
-                    <ul class="content-list">
-                        <li class="content-list__item"><strong>Operatore - </strong>Nova Forge Ltd</li>
-                        <li class="content-list__item"><strong>Licenza - </strong>Licenza di Anjouan (Comoros) 🇰🇲</li>
-                        <li class="content-list__item"><strong>Prodotti - </strong>Casinò, Casinò Live, Scommesse
-                            Sportive,
-                            Virtuali</li>
-                        <li class="content-list__item"><strong>Totale Giochi - </strong>Oltre 11.300 giochi</li>
-                        <li class="content-list__item"><strong>Bonus di Benvenuto - </strong>100% fino a 500 € + 200
-                            giri
-                            gratuiti + 1 Bonus Crab</li>
-                        <li class="content-list__item"><strong>Deposito Minimo - </strong>10 €</li>
-                        <li class="content-list__item"><strong>Prelievo Massimo - </strong>Fino a 20.000 € al mese (in
-                            base
-                            al livello VIP)</li>
-                        <li class="content-list__item"><strong>Supporto - </strong>Chat dal vivo 24/7, Email</li>
-                    </ul>
-                </div>
+                <p class="gamification__list-title">Elementi chiave della gamification includono:</p>
+
+                <ul class="content-list">
+                    <li class="content-list__item"><strong>Bonus Crab: </strong>Una vera "Claw Machine" interattiva.
+                        Ogni primo deposito giornaliero di almeno 10 € garantisce un tentativo. Afferrare un pupazzo
+                        converte il premio in Coins, bonus cash o giri gratis</li>
+                    <li class="content-list__item"><strong>Negozio (Shop): </strong>I giocatori accumulano Coins
+                        (monete) scommettendo o depositando (5% del deposito diventa Coins). Queste monete possono
+                        essere scambiate nel negozio per bonus in denaro, free bets, giri gratuiti o tentativi extra
+                        al Bonus Crab</li>
+                    <li class="content-list__item"><strong>Tornei: </strong>Competizioni regolari tra utenti con
+                        classifiche basate sulle scommesse o sui moltiplicatori di vincita</li>
+                    <li class="content-list__item"><strong>Sfide Settimanali: </strong>Obiettivi specifici (es. "fai
+                        100 spin su questa slot") che, una volta completati, sbloccano ulteriori Coins</li>
+                    <li class="content-list__item"><strong>Livelli VIP: </strong>Un sistema a 5 livelli che sblocca
+                        vantaggi crescenti, come cashback maggiorati, limiti di prelievo più alti e un account
+                        manager personale</li>
+
+                </ul>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <div class="divider"></div>
+    <div class="divider"></div>
+
+    <section class="payment">
+        <div class="container">
+            <div class="payment__content">
+                <h2 class="payment__title">
+                    Metodi di pagamento su Dragonia casino in Italia
+                </h2>
+                <p class="payment__text">La gestione finanziaria sulla piattaforma è pensata per essere flessibile e
+                    adatta alle esigenze locali. Dragonia casino in Italia supporta una vasta gamma di opzioni
+                    bancarie, permettendo transazioni sicure sia in valuta fiat che digitale.</p>
+                <p class="payment__list-title">Ecco una panoramica degli strumenti disponibili per depositi e
+                    prelievi:</p>
+
+                <div class="table-container">
+                    <table class="table">
+                        <thead class="table__head">
+                            <tr class="table__row">
+                                <th class="table__cell table__cell--head">Metodo</th>
+                                <th class="table__cell table__cell--head">Tipo</th>
+                                <th class="table__cell table__cell--head">Deposito Min/Max</th>
+                                <th class="table__cell table__cell--head">Prelievo Min/Max</th>
+                                <th class="table__cell table__cell--head">Tempo di Accredito (Prelievo)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="table__body">
+                            <tr class="table__row">
+                                <td class="table__cell">Mastercard / Visa</td>
+                                <td class="table__cell">Carta di Credito/Debito</td>
+                                <td class="table__cell">10 € - 2.000 €</td>
+                                <td class="table__cell">10 € - 3.000 €</td>
+                                <td class="table__cell">1-3 Giorni lavorativi</td>
+                            </tr>
+                            <tr class="table__row">
+                                <td class="table__cell">MiFinity</td>
+                                <td class="table__cell">E-wallet</td>
+                                <td class="table__cell">10 € - 2.500 €</td>
+                                <td class="table__cell">10 € - 2.500 €</td>
+                                <td class="table__cell">Immediato / 24 ore</td>
+                            </tr>
+                            <tr class="table__row">
+                                <td class="table__cell">Revolut</td>
+                                <td class="table__cell">Carta/Bonifico</td>
+                                <td class="table__cell">10 € - 5.000 €</td>
+                                <td class="table__cell">10 € - 5.000 €</td>
+                                <td class="table__cell">1-3 Giorni lavorativi</td>
+                            </tr>
+                            <tr class="table__row">
+                                <td class="table__cell">Jeton / Skrill / Neteller</td>
+                                <td class="table__cell">E-wallet</td>
+                                <td class="table__cell">10 € - 5.000 €</td>
+                                <td class="table__cell">10 € - 5.000 €</td>
+                                <td class="table__cell">Immediato / 24 ore</td>
+                            </tr>
+                            <tr class="table__row">
+                                <td class="table__cell">Criptovalute (BTC, USDT, etc.)</td>
+                                <td class="table__cell">Crypto</td>
+                                <td class="table__cell">10/30 € - 5.000 €</td>
+                                <td class="table__cell">60 € - 5.000 €</td>
+                                <td class="table__cell">Immediato / 1 ora</td>
+                            </tr>
+                            <tr class="table__row">
+                                <td class="table__cell">Bonifico Bancario</td>
+                                <td class="table__cell">Banca</td>
+                                <td class="table__cell">N/A</td>
+                                <td class="table__cell">10 € - 5.000 €</td>
+                                <td class="table__cell">3-5 Giorni lavorativi</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p class="payment__text">Su Dragonia i prelievi vengono elaborati dal dipartimento finanziario entro
+                    3 giorni lavorativi. Non vengono applicate commissioni dirette sui pagamenti da parte del
+                    casinò, e la piattaforma di gioco online accetta pagamenti anche tramite vari asset digitali,
+                    garantendo anonimato e velocità per chi predilige le criptovalute.
+                </p>
 
 
-        <section class="features">
-            <div class="container">
-                <div class="features__content">
-                    <h2 class="features__title">I Migliori giochi in Italia</h2>
-                    <div class="slider">
-                        <div class="slider__arrow slider__arrow--left">‹</div>
-                        <div class="slider__arrow slider__arrow--right">›</div>
 
-                        <div class="slider__track">
-                            <a href="#" class="card card--image">
-                                <img class="card__bg" src="images/cards/card-game-1.webp" alt="Piggy Banks"
-                                    loading="lazy">
-                                <span class="card__label">Piggy Banks</span>
-                            </a>
+            </div>
+        </div>
+    </section>
 
-                            <a href="#" class="card card--image">
-                                <img class="card__bg" src="images/cards/card-game-2.webp" alt="Wings Of Fire"
-                                    loading="lazy">
-                                <span class="card__label">Wings Of Fire</span>
-                            </a>
+    <div class="divider"></div>
 
-                            <a href="#" class="card card--image">
-                                <img class="card__bg" src="images/cards/card-game-3.webp" alt="Boost Hot"
-                                    loading="lazy">
-                                <span class="card__label">Boost Hot</span>
-                            </a>
+    <section class="review">
+        <div class="container">
+            <div class="review__content">
+                <h2 class="review__title">Recensioni e feedback su Dragonia</h2>
+                <p class="review__text">Per fornire un quadro più completo, abbiamo raccolto alcune opinioni
+                    rappresentative dell'esperienza utente su Dragonia casino, basate sulle funzionalità discusse.
+                </p>
 
-                            <a href="#" class="card card--image">
-                                <img class="card__bg" src="images/cards/card-game-4.webp" alt="Double Dragon"
-                                    loading="lazy">
-                                <span class="card__label">Double Dragon</span>
-                            </a>
+                <div class="review__inner">
 
-                            <a href="#" class="card card--image">
-                                <img class="card__bg" src="images/cards/card-game-5.webp" alt="Rock & Riches"
-                                    loading="lazy">
-                                <span class="card__label">Rock & Riches</span>
-                            </a>
-
-
-                            <a href="#" class="card card--image">
-                                <img class="card__bg" src="images/cards/card-game-6.webp" alt="Trumpit Coin Link"
-                                    loading="lazy">
-                                <span class="card__label">Trumpit Coin Link</span>
-                            </a>
-
-
-                            <a href="#" class="card card--image">
-                                <img class="card__bg" src="images/cards/card-game-7.webp" alt="Mega Fortune"
-                                    loading="lazy">
-                                <span class="card__label">Mega Fortune</span>
-                            </a>
-
-
-                            <a href="#" class="card card--image">
-                                <img class="card__bg" src="images/cards/card-game-8.webp" alt="Fruit Blaze"
-                                    loading="lazy">
-                                <span class="card__label">Le Santa</span>
-                            </a>
+                    <div class="review__card">
+                        <div class="review__header">
+                            <img src="/images/avatar-auto.webp" alt="avatar" class="review__avatar">
+                            <div>
+                                <div class="review__name">Marco_88</div>
+                                <div class="review__rating">★★★★ 4/5</div>
+                            </div>
+                        </div>
+                        <div class="review__description">"Mi sono iscritto per il bonus di benvenuto sportivo che
+                            per l'Italia è interessante. Apprezzo molto il Bonus Crab giornaliero, è un tocco
+                            divertente che non ho trovato altrove. I prelievi con crypto sono stati veloci, circa 4
+                            ore."
                         </div>
                     </div>
 
-                </div>
-            </div>
-        </section>
-
-        <div class="divider"></div>
-
-        <section class="bonus">
-            <div class="container">
-                <div class="bonus__content">
-                    <h2 class="bonus__title">Pacchetto bonus e promozioni in Dragonia casino</h2>
-                    <p class="bonus__text">La sezione promozionale rappresenta uno dei punti di forza dell'operatore,
-                        con offerte che coprono sia i nuovi iscritti che gli utenti abituali. Dragonia casino ha
-                        strutturato un bonus di benvenuto versatile, pensato per adattarsi alle diverse tipologie di
-                        giocatore, affiancato da incentivi settimanali che mantengono alto il valore
-                        dell'intrattenimento.
-                    </p>
-
-                    <p class="bonus__table-title">La tabella seguente illustra le offerte principali disponibili per il
-                        primo deposito:</p>
-
-                    <div class="table-container">
-                        <table class="table">
-                            <thead class="table__head">
-                                <tr class="table__row">
-                                    <th class="table__cell table__cell--head">Tipologia Bonus</th>
-                                    <th class="table__cell table__cell--head">Valore dell'offerta</th>
-                                    <th class="table__cell table__cell--head">Requisiti di Scommessa</th>
-                                    <th class="table__cell table__cell--head">Deposito Minimo</th>
-                                </tr>
-                            </thead>
-                            <tbody class="table__body">
-                                <tr class="table__row">
-                                    <td class="table__cell">Benvenuto Casinò</td>
-                                    <td class="table__cell">100% fino a 500 € + 200 giri gratuiti + 1 Bonus Crab</td>
-                                    <td class="table__cell">35x (deposito + bonus); 40x (giri)</td>
-                                    <td class="table__cell">20 € (10 € per 1 Bonus Crab)</td>
-                                </tr>
-                                <tr class="table__row">
-                                    <td class="table__cell">Benvenuto Sport</td>
-                                    <td class="table__cell">100% fino a 150 € (Esclusivo Italia)</td>
-                                    <td class="table__cell">6x (deposito + bonus)</td>
-                                    <td class="table__cell">20 €</td>
-                                </tr>
-                                <tr class="table__row">
-                                    <td class="table__cell">High Roller (W/E)</td>
-                                    <td class="table__cell">50% fino a 700 € + 50 giri gratuiti</td>
-                                    <td class="table__cell">35x (deposito + bonus)</td>
-                                    <td class="table__cell">50 €</td>
-                                </tr>
-                                <tr class="table__row">
-                                    <td class="table__cell">Cashback Settimanale</td>
-                                    <td class="table__cell">15% fino a 3.000 € (Livelli VIP)</td>
-                                    <td class="table__cell">1x (sul cashback erogato)</td>
-                                    <td class="table__cell">N/A</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                    <div class="review__card">
+                        <div class="review__header">
+                            <img src="/images/avatar-emmo.webp" alt="avatar" class="review__avatar">
+                            <div>
+                                <div class="review__name">Giulia_S</div>
+                                <div class="review__rating">★★★★★ 5/5</div>
+                            </div>
+                        </div>
+                        <div class="review__description">"La varietà di slot è impressionante, ci sono provider che
+                            fatico a trovare su altri siti ADM. L'interfaccia da mobile funziona bene, anche senza
+                            app nativa. Il supporto in chat mi ha aiutato velocemente a risolvere un dubbio sul
+                            rollover."</div>
                     </div>
 
-                    <h3 class="bonus__subtitle">Altre offerte attive sulla piattaforma</h3>
-                    <p class="bonus__text">Oltre al bonus di benvenuto, il casinò Dragonia mantiene viva l'attenzione
-                        con promozioni ricorrenti legate sia all'attività nelle slot che nelle scommesse sportive.
-                        Queste offerte includono ricariche nel fine settimana, cashback per il casinò live e funzioni
-                        speciali per le schedine multiple.
-                    </p>
-                    <p class="bonus__table-title">Ecco le principali promozioni aggiuntive attive:</p>
-                    <ul class="content-list">
+                    <div class="review__card">
+                        <div class="review__header">
+                            <img src="/images/avatar-mult.webp" alt="avatar" class="review__avatar">
+                            <div>
+                                <div class="review__name">LucaTrading90</div>
+                                <div class="review__rating">★★★★ 4/5</div>
+                            </div>
+                        </div>
+                        <div class="review__description">"Uso Dragonia principalmente per il casinò live. La scelta
+                            dei tavoli Evolution è ottima. Il programma VIP inizia a dare vantaggi reali solo dal
+                            terzo livello, ma il cashback settimanale è un buon paracadute."
+                        </div>
+                    </div>
 
-                        <li class="content-list__item"><strong>Ricarica Settimanale: </strong>50 giri gratuiti
-                            disponibili dal lunedì al giovedì su un deposito minimo di 20 €</li>
-                        <li class="content-list__item"><strong>Cashback Live: </strong>un ritorno del 25% fino a 200 €
-                            sulle perdite nette nei giochi con croupier dal vivo</li>
-                        <li class="content-list__item"><strong>Accumulator Boost: </strong>potenziamento delle vincite
-                            fino al 100% sulle scommesse multiple con almeno 3 eventi</li>
-                        <li class="content-list__item"><strong>2 Goal di Vantaggio: </strong>pagamento anticipato della
-                            scommessa se la squadra scelta va in vantaggio di due gol</li>
-                        <li class="content-list__item"><strong>Tornei: </strong>competizioni regolari come "Slot of the
-                            Week" o "Monthly Race" con montepremi in denaro o Coins</li>
+                    <div class="review__card">
+                        <div class="review__header">
+                            <img src="/images/avatar-girl.webp" alt="avatar" class="review__avatar">
+                            <div>
+                                <div class="review__name">Alessanda</div>
+                                <div class="review__rating">★★★★★ 5/5</div>
+                            </div>
+                        </div>
+                        <div class="review__description">"Mi piace molto la sezione live casino, soprattutto i
+                            tavoli con croupier italiani. Le promozioni settimanali sono chiare e facili da usare,
+                            senza condizioni nascoste. Ho già effettuato due prelievi e sono arrivati entrambi in
+                            giornata."</div>
+                    </div>
 
-                    </ul>
-
-                </div>
-            </div>
-        </section>
-
-        <div class="divider"></div>
-
-        <div class="cta">
-            <img class="cta__bg" src="images/bg-cta-1.webp" alt="bunner CTA" loading="lazy">
-
-            <div class="container">
-                <div class="cta__content">
-                    <div class="cta__title">250% BONUS DI BENVENUTO</div>
-
-                    <div class="cta__actions">
-
-                        <button class="btn btn--secondary">Scopri di più</button>
+                    <div class="review__card">
+                        <div class="review__header">
+                            <img src="/images/avatar-girl2.webp" alt="avatar" class="review__avatar">
+                            <div>
+                                <div class="review__name">Vale77</div>
+                                <div class="review__rating">★★★★ 4/5</div>
+                            </div>
+                        </div>
+                        <div class="review__description">"Ho scoperto Dragonia grazie a un amico e sono rimasta
+                            sorpresa dalla qualità delle slot e dalla velocità del sito. Il bonus senza deposito è
+                            stato un bel plus, anche se mi piacerebbe vedere più tornei giornalieri."</div>
                     </div>
                 </div>
             </div>
         </div>
+    </section>
 
-        <div class="divider"></div>
+    <div class="divider"></div>
 
-        <section class="registration">
-            <div class="container">
-                <div class="registration__content">
-                    <h2 class="registration__title">Registrazione a Dragonia casino</h2>
-                    <p class="registration__text">Aprire un account su Dragonia casino richiede pochi minuti e una
-                        procedura
-                        standardizzata che assicura la conformità con le normative internazionali. Il sistema guida
-                        l'utente
-                        passo dopo passo, permettendo di scegliere subito il bonus desiderato.</p>
-                    <p class="registration__list-subtitle">I passaggi necessari per completare l'iscrizione sono:</p>
-                    <ul class="content-list">
+    <section class="support">
+        <div class="container">
+            <div class="support__content">
+                <h2 class="support__title">Sicurezza, licenza e supporto clienti</h2>
+                <p class="support__text">L'affidabilità è un criterio imprescindibile per valutare un operatore.
+                    Dragonia casino adotta protocolli rigorosi per garantire un ambiente protetto e trasparente per
+                    tutti i suoi utenti.</p>
 
-                        <li class="content-list__item"><strong>Passaggio 1: </strong>Cliccare sul pulsante di
-                            registrazione
-                            presente nella schermata iniziale del sito ufficiale</li>
-                        <li class="content-list__item"><strong>Passaggio 2: </strong>Selezionare il bonus preferito
-                            (Casinò,
-                            Sport o codice promozionale)</li>
-                        <li class="content-list__item"><strong>Passaggio 3: </strong>Inserire l'indirizzo email e creare
-                            una
-                            password sicura</li>
-                        <li class="content-list__item"><strong>Passaggio 4: </strong>Confermare di avere più di 18 anni
-                            e
-                            accettare Termini e Condizioni</li>
-                        <li class="content-list__item"><strong>Passaggio 5: </strong>Compilare il modulo con i dati
-                            anagrafici (Nome, Cognome, Indirizzo)</li>
-                        <li class="content-list__item"><strong>Passaggio 6: </strong>Selezionare "Italy" come paese e
-                            "EUR"
-                            come valuta</li>
-                        <li class="content-list__item"><strong>Passaggio 7: </strong>Cliccare su "Crea Account" per
-                            finalizzare l'operazione</li>
+                <h3 class="support__subtitle">Licenza e protezione dei dati</h3>
 
-                    </ul>
-                </div>
-            </div>
-        </section>
+                <p class="support__list-title">Il sito opera con una licenza valida rilasciata dall'autorità di
+                    Anjouan. Sebbene sia una licenza internazionale offshore, impone il rispetto di normative
+                    specifiche riguardanti il gioco corretto e l'antiriciclaggio. La sicurezza tecnica è garantita
+                    da:</p>
 
-        <div class="divider"></div>
+                <ul class="content-list">
+                    <li class="content-list__item"><strong>Crittografia SSL: </strong>La versione TLS 1.2 assicura
+                        che le informazioni personali e finanziarie siano trasmesse in modo sicuro e non
+                        intercettabile</li>
+                    <li class="content-list__item"><strong>KYC (Know Your Customer): </strong>Procedure di verifica
+                        dell'identità obbligatorie prima dei prelievi, per prevenire frodi e tutelare i minori</li>
+                    <li class="content-list__item"><strong>RNG Certificato: </strong>I giochi utilizzano generatori
+                        di numeri casuali testati per assicurare risultati equi e non manipolabili</li>
 
-        <section class="catalog">
-            <div class="container">
-                <div class="catalog__content">
-                    <h2 class="catalog__title">Catalogo giochi di Dragonia</h2>
-                    <p class="catalog__text">L'offerta ludica di Dragonia casino è vasta e ben organizzata, progettata
-                        per soddisfare i gusti eterogenei dei giocatori italiani. La piattaforma ospita una libreria
-                        imponente grazie alla collaborazione con numerosi fornitori di software di alto livello,
-                        garantendo varietà sia nelle tematiche che nelle meccaniche di gioco. La struttura del sito
-                        permette di filtrare facilmente tra migliaia di opzioni.</p>
+                </ul>
 
-                    <h3 class="catalog__subtitle">I fornitori di software</h3>
+                <h3 class="support__subtitle">Servizio di assistenza</h3>
 
-                    <p class="catalog__text">Il casinò opera con brand riconosciuti a livello mondiale, assicurando che
-                        ogni titolo rispetti elevati standard di qualità e casualità (RNG).</p>
+                <p class="support__text">In caso di difficoltà o dubbi, Dragonia casino mette a disposizione un
+                    servizio clienti efficiente.</p>
 
-                    <p class="catalog__list-title">La suddivisione dei provider include:</p>
+                <p class="support__list-title">I canali di contatto disponibili sono:</p>
 
+                <div class="electric-cards">
 
-                    <div class="electric-cards">
-
-                        <div class="electric-card">
-                            <div class="electric-card__inner">
-                                <div class="electric-card__border-outer">
-                                    <div class="electric-card__main"></div>
-                                </div>
-                                <div class="electric-card__glow-1"></div>
-                                <div class="electric-card__glow-2"></div>
+                    <div class="electric-card">
+                        <div class="electric-card__inner">
+                            <div class="electric-card__border-outer">
+                                <div class="electric-card__main"></div>
                             </div>
-                            <div class="electric-card__overlay-1"></div>
-                            <div class="electric-card__overlay-2"></div>
-                            <div class="electric-card__background-glow"></div>
-                            <div class="electric-card__content">
-                                <div class="electric-card__content-top">
-                                    <div class="electric-card__badge">Leader</div>
-                                    <p class="electric-card__title">Tier 1 (Leader di settore)</p>
-                                </div>
-                                <hr class="electric-card__divider" />
-                                <div class="electric-card__content-bottom">
-                                    <p class="electric-card__description">Playtech (623+ giochi), Pragmatic Play,
-                                        Spinomenal (700+ titoli), Yggdrasil</p>
-                                </div>
+                            <div class="electric-card__glow-1"></div>
+                            <div class="electric-card__glow-2"></div>
+                        </div>
+                        <div class="electric-card__overlay-1"></div>
+                        <div class="electric-card__overlay-2"></div>
+                        <div class="electric-card__background-glow"></div>
+                        <div class="electric-card__content">
+                            <div class="electric-card__content-top">
+                                <div class="electric-card__badge">Live Chat</div>
+                                <p class="electric-card__title">24/7</p>
+                            </div>
+                            <div class="electric-card__divider"></div>
+                            <div class="electric-card__content-bottom">
+                                <p class="electric-card__description">Risposte rapide, accessibile dalla schermata
+                                    iniziale. Ideale per domande veloci</p>
                             </div>
                         </div>
-
-                        <div class="electric-card">
-                            <div class="electric-card__inner">
-                                <div class="electric-card__border-outer">
-                                    <div class="electric-card__main"></div>
-                                </div>
-                                <div class="electric-card__glow-1"></div>
-                                <div class="electric-card__glow-2"></div>
-                            </div>
-                            <div class="electric-card__overlay-1"></div>
-                            <div class="electric-card__overlay-2"></div>
-                            <div class="electric-card__background-glow"></div>
-                            <div class="electric-card__content">
-                                <div class="electric-card__content-top">
-                                    <div class="electric-card__badge">Innovatori</div>
-                                    <p class="electric-card__title">Tier 2 (Popolari & Innovativi)</p>
-                                </div>
-                                <hr class="electric-card__divider" />
-                                <div class="electric-card__content-bottom">
-                                    <p class="electric-card__description">Hacksaw Gaming, Red Tiger, Relax Gaming,
-                                        Thunderkick, Nolimit City</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="electric-card">
-                            <div class="electric-card__inner">
-                                <div class="electric-card__border-outer">
-                                    <div class="electric-card__main"></div>
-                                </div>
-                                <div class="electric-card__glow-1"></div>
-                                <div class="electric-card__glow-2"></div>
-                            </div>
-                            <div class="electric-card__overlay-1"></div>
-                            <div class="electric-card__overlay-2"></div>
-                            <div class="electric-card__background-glow"></div>
-                            <div class="electric-card__content">
-                                <div class="electric-card__content-top">
-                                    <div class="electric-card__badge">Live</div>
-                                    <p class="electric-card__title">Specialisti Live</p>
-                                </div>
-                                <hr class="electric-card__divider" />
-                                <div class="electric-card__content-bottom">
-                                    <p class="electric-card__description">Evolution, Pragmatic Live, Bombay Live, Ezugi
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="electric-card">
-                            <div class="electric-card__inner">
-                                <div class="electric-card__border-outer">
-                                    <div class="electric-card__main"></div>
-                                </div>
-                                <div class="electric-card__glow-1"></div>
-                                <div class="electric-card__glow-2"></div>
-                            </div>
-                            <div class="electric-card__overlay-1"></div>
-                            <div class="electric-card__overlay-2"></div>
-                            <div class="electric-card__background-glow"></div>
-                            <div class="electric-card__content">
-                                <div class="electric-card__content-top">
-                                    <div class="electric-card__badge">Esclusive</div>
-                                    <p class="electric-card__title">Provider di nicchia</p>
-                                </div>
-                                <hr class="electric-card__divider" />
-                                <div class="electric-card__content-bottom">
-                                    <p class="electric-card__description">Swintt, Tom Horn, Spribe (noto per i giochi
-                                        crash)</p>
-                                </div>
-                            </div>
-                        </div>
-
                     </div>
 
-                    <h3 class="catalog__subtitle">Le Slot machine</h3>
-                    <p class="catalog__text">La sezione dedicata alle slot è il cuore pulsante del sito, con un
-                        assortimento che spazia dalle classiche a 3 rulli fino alle più moderne video slot con funzioni
-                        complesse. Dragonia casino offre opzioni per filtrare i giochi per popolarità, novità o
-                        funzionalità specifiche come l'acquisto del bonus.</p>
-
-                    <p class="catalog__list-title">Ecco alcune delle categorie e titoli di punta disponibili:</p>
-
-                    <div class="table-container">
-                        <table class="table">
-                            <thead class="table__head">
-                                <tr class="table__row">
-                                    <th class="table__cell table__cell--head">Categoria</th>
-                                    <th class="table__cell table__cell--head">Titoli di Esempio</th>
-                                    <th class="table__cell table__cell--head">Caratteristiche Principali</th>
-                                </tr>
-                            </thead>
-                            <tbody class="table__body">
-                                <tr class="table__row">
-                                    <td class="table__cell">Top Popolari</td>
-                                    <td class="table__cell">Book of Ra, Starburst, Gonzo’s Quest</td>
-                                    <td class="table__cell">Giochi iconici con meccaniche collaudate e alto gradimento
-                                    </td>
-                                </tr>
-                                <tr class="table__row">
-                                    <td class="table__cell">Bonus Buy</td>
-                                    <td class="table__cell">Wanted Dead or a Wild, Sweet Candy Blitz</td>
-                                    <td class="table__cell">Possibilità di acquistare l'accesso diretto ai giri gratuiti
-                                    </td>
-                                </tr>
-                                <tr class="table__row">
-                                    <td class="table__cell">Megaways</td>
-                                    <td class="table__cell">Pirate Kingdom Megaways, Gonzo's Quest Megaways</td>
-                                    <td class="table__cell">Migliaia di modi per vincere e rulli dinamici</td>
-                                </tr>
-                                <tr class="table__row">
-                                    <td class="table__cell">Jackpot</td>
-                                    <td class="table__cell">Dynamite Riches, 10,001 Nights, Age of the Gods</td>
-                                    <td class="table__cell">Titoli con montepremi progressivi o fissi</td>
-                                </tr>
-                                <tr class="table__row">
-                                    <td class="table__cell">Instant Games</td>
-                                    <td class="table__cell">Aviator, Plinko, Mines</td>
-                                    <td class="table__cell">Giochi veloci con risultati immediati</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                    <div class="electric-card">
+                        <div class="electric-card__inner">
+                            <div class="electric-card__border-outer">
+                                <div class="electric-card__main"></div>
+                            </div>
+                            <div class="electric-card__glow-1"></div>
+                            <div class="electric-card__glow-2"></div>
+                        </div>
+                        <div class="electric-card__overlay-1"></div>
+                        <div class="electric-card__overlay-2"></div>
+                        <div class="electric-card__background-glow"></div>
+                        <div class="electric-card__content">
+                            <div class="electric-card__content-top">
+                                <div class="electric-card__badge">Email</div>
+                                <p class="electric-card__title">Support 24/7</p>
+                            </div>
+                            <div class="electric-card__divider"></div>
+                            <div class="electric-card__content-bottom">
+                                <p class="electric-card__description">Per problemi tecnici complessi o invio
+                                    documenti. Risposta entro 24 ore</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="electric-card">
+                        <div class="electric-card__inner">
+                            <div class="electric-card__border-outer">
+                                <div class="electric-card__main"></div>
+                            </div>
+                            <div class="electric-card__glow-1"></div>
+                            <div class="electric-card__glow-2"></div>
+                        </div>
+                        <div class="electric-card__overlay-1"></div>
+                        <div class="electric-card__overlay-2"></div>
+                        <div class="electric-card__background-glow"></div>
+                        <div class="electric-card__content">
+                            <div class="electric-card__content-top">
+                                <div class="electric-card__badge">Help Centre</div>
+                                <p class="electric-card__title">Online</p>
+                            </div>
+                            <div class="electric-card__divider"></div>
+                            <div class="electric-card__content-bottom">
+                                <p class="electric-card__description">Sezione FAQ dettagliata divisa per argomenti
+                                    (Bonus, Prelievi, Tecnico)
+                                </p>
+                            </div>
+                        </div>
                     </div>
 
-                    <h3 class="catalog__subtitle">Casinò Live</h3>
-                    <p class="catalog__text">Per chi cerca un'esperienza più immersiva, la sezione casinò live di
-                        Dragonia casino offre tavoli in streaming ad alta definizione. Qui è possibile interagire con
-                        veri dealer e partecipare a show televisivi interattivi. La selezione copre tutti i classici e
-                        introduce varianti moderne.
-                    </p>
-
-                    <p class="catalog__list-title">Le opzioni principali includono:</p>
-
-                    <ul class="content-list">
-                        <li class="content-list__item"><strong>Roulette: </strong>Immersive Roulette, Lightning
-                            Roulette, tavoli in lingua italiana e varianti speed</li>
-                        <li class="content-list__item"><strong>Blackjack: </strong>Infinite Blackjack, Power Blackjack e
-                            tavoli VIP per puntate elevate</li>
-                        <li class="content-list__item"><strong>Baccarat & Dadi: </strong>Speed Baccarat, No Commission
-                            Baccarat, Sic Bo e Dragon Tiger</li>
-                        <li class="content-list__item"><strong>Game Show: </strong>Crazy Time, Monopoly Live, Sweet
-                            Bonanza CandyLand, Funky Time</li>
-                    </ul>
-
-                    <h3 class="catalog__subtitle">Giochi da tavolo RNG</h3>
-                    <p class="caralog__text">Chi preferisce i giochi da tavolo in versione software, dove è possibile
-                        dettare il proprio ritmo senza un timer dal vivo, troverà una sezione dedicata. Dragonia casino
-                        propone diverse varianti di poker, roulette e carte.</p>
-
-                    <div class="electric-cards">
-
-                        <div class="electric-card">
-                            <div class="electric-card__inner">
-                                <div class="electric-card__border-outer">
-                                    <div class="electric-card__main"></div>
-                                </div>
-                                <div class="electric-card__glow-1"></div>
-                                <div class="electric-card__glow-2"></div>
-                            </div>
-                            <div class="electric-card__overlay-1"></div>
-                            <div class="electric-card__overlay-2"></div>
-                            <div class="electric-card__background-glow"></div>
-                            <div class="electric-card__content">
-                                <div class="electric-card__content-top">
-                                    <img class="electric-card__img" src="images/icon/icon-blackjack.webp" width="60"
-                                        height="60" alt="Blackjack">
-                                    <div class="electric-card__badge">giochi di societa</div>
-                                    <p class="electric-card__title">Carte</p>
-                                </div>
-                                <hr class="electric-card__divider" />
-                                <div class="electric-card__content-bottom">
-                                    <p class="electric-card__description">Single Deck Blackjack, Multihand Blackjack,
-                                        Caribbean Stud Poker, Texas Hold'em</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="electric-card">
-                            <div class="electric-card__inner">
-                                <div class="electric-card__border-outer">
-                                    <div class="electric-card__main"></div>
-                                </div>
-                                <div class="electric-card__glow-1"></div>
-                                <div class="electric-card__glow-2"></div>
-                            </div>
-                            <div class="electric-card__overlay-1"></div>
-                            <div class="electric-card__overlay-2"></div>
-                            <div class="electric-card__background-glow"></div>
-                            <div class="electric-card__content">
-                                <div class="electric-card__content-top">
-                                    <img class="electric-card__img" src="images/icon/icon-roulette.webp" width="60"
-                                        height="60" alt="roulette">
-                                    <div class="electric-card__badge">giochi di societa</div>
-                                    <p class="electric-card__title">Roulette</p>
-                                </div>
-                                <hr class="electric-card__divider" />
-                                <div class="electric-card__content-bottom">
-                                    <p class="electric-card__description">European Roulette, American Roulette, French
-                                        Roulette (La Partage)</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="electric-card">
-                            <div class="electric-card__inner">
-                                <div class="electric-card__border-outer">
-                                    <div class="electric-card__main"></div>
-                                </div>
-                                <div class="electric-card__glow-1"></div>
-                                <div class="electric-card__glow-2"></div>
-                            </div>
-                            <div class="electric-card__overlay-1"></div>
-                            <div class="electric-card__overlay-2"></div>
-                            <div class="electric-card__background-glow"></div>
-                            <div class="electric-card__content">
-                                <div class="electric-card__content-top">
-                                    <img class="electric-card__img" src="images/icon/icon-pocker.webp" width="60"
-                                        height="60" alt="Pocker">
-                                    <div class="electric-card__badge">giochi di societa</div>
-                                    <p class="electric-card__title">Video Poker</p>
-                                </div>
-                                <hr class="electric-card__divider" />
-                                <div class="electric-card__content-bottom">
-                                    <p class="electric-card__description">Jacks or Better, Deuces Wild, Aces & Eights
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-
-                    </div>
-
-                    <h3 class="catalog__subtitle">Altre categorie di intrattenimento</h3>
-                    <p class="catalog__list-title">Per completare l'offerta, il sito include sezioni meno convenzionali
-                        ma molto apprezzate:</p>
-                    <ul class="content-list">
-                        <li class="content-list__item"><strong>Crash Games: </strong>Titoli come Aviator e JetX dove il
-                            tempismo nel prelievo è tutto</li>
-                        <li class="content-list__item"><strong>Bonus Crab: </strong>Un gioco ad artiglio unico
-                            (esclusiva della piattaforma) che permette di convertire crediti in premi reali, bonus o
-                            gettoni</li>
-                    </ul>
 
                 </div>
+
+                <p class="support__text">Il supporto è preparato per gestire richieste relative a bonus, verifiche
+                    account e gioco responsabile.</p>
+
             </div>
-        </section>
+        </div>
+    </section>
 
-        <div class="divider"></div>
+    <div class="divider"></div>
 
-        <section class="sports-betting">
-            <div class="container">
-                <div class="sports-betting__content">
-                    <h2 class="sports-betting__title">Scommesse sportive su Dragonia</h2>
-                    <p class="sports-betting__text">La sezione sportiva è curata con attenzione e rappresenta un
-                        pilastro importante dell'offerta complessiva. Dragonia offre un palinsesto competitivo che copre
-                        migliaia di eventi giornalieri, spaziando dai campionati maggiori agli sport di nicchia.</p>
-                    <p class="sports-betting__list-subtitle">Gli scommettitori possono sfruttare diverse modalità di
-                        puntata:</p>
+    <section class="what">
+        <div class="container">
+            <div class="what__content">
+                <h2 class="what__title">Perchè scegliere Dragonia</h2>
+                <p class="what__text">In un mercato affollato, Dragonia casino cerca di emergere attraverso
+                    caratteristiche distintive.</p>
 
-                    <ul class="content-list">
-                        <li class="content-list__item"><strong>Scommesse Live: </strong>Una dashboard aggiornata in
-                            tempo reale per puntare mentre gli eventi sono in corso, con quote dinamiche</li>
-                        <li class="content-list__item"><strong>Pre-match: </strong>Ampia profondità di mercati su
-                            calcio, basket, tennis e molto altro</li>
-                        <li class="content-list__item"><strong>E-sports: </strong>Copertura di tornei internazionali di
-                            League of Legends, Dota 2, CS:GO e Valorant</li>
-                        <li class="content-list__item"><strong>Virtual Sports: </strong>Corse simulate di cavalli,
-                            levrieri e partite di calcio virtuale disponibili 24 ore su 24</li>
-                        <li class="content-list__item"><strong>Funzioni: </strong>Cash Out (parziale o totale) e Bet
-                            Builder per creare scommesse personalizzate all'interno dello stesso evento</li>
-                    </ul>
-                    <p class="sports-betting__text">Le opzioni di scommessa includono risultati finali, handicap
-                        asiatici, under/over, e marcatori, garantendo flessibilità per ogni strategia di gioco.
-                    </p>
-                </div>
+                <p class="what__list-title">Ecco i principali motivi per cui i giocatori potrebbero preferire questo
+                    brand:</p>
+
+                <ul class="content-list">
+                    <li class="content-list__item"><strong>Vasta Libreria: </strong>Con oltre 11.300 giochi, è
+                        difficile non trovare il proprio titolo preferito</li>
+                    <li class="content-list__item"><strong>Gamification Unica: </strong>Il Bonus Crab e lo Shop
+                        aggiungono valore ogni giorno, oltre alle semplici vincite alle slot</li>
+                    <li class="content-list__item"><strong>Flessibilità nei Pagamenti: </strong>Supporto completo
+                        per Euro e criptovalute, con limiti accessibili (deposito minimo 10 €)</li>
+                    <li class="content-list__item"><strong>Ottimizzazione Mobile: </strong>Il sito è perfettamente
+                        fruibile da smartphone e tablet, garantendo un'esperienza fluida senza necessità di download
+                    </li>
+                    <li class="content-list__item"><strong>Promozioni Continue: </strong>Non solo un benvenuto, ma
+                        ricariche settimanali, cashback e tornei che premiano la costanza</li>
+
+                </ul>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <div class="divider"></div>
+    <div class="divider"></div>
 
-        <div class="cta">
-            <img class="cta__bg" src="images/bg-cta-2.webp" alt="bunner CTA" loading="lazy">
 
-            <div class="container">
-                <div class="cta__content">
-                    <div class="cta__title">250% BONUS DI BENVENUTO</div>
+    <section class="about">
+        <div class="container">
+            <div class="about__content">
+                <h2 class="about__title">Gioco responsabile</h2>
+                <p class="about__text">Dragonia promuove attivamente il Gioco Responsabile. La piattaforma fornisce
+                    strumenti per aiutare i giocatori a mantenere il controllo, come la possibilità di impostare
+                    limiti di deposito o periodi di autoesclusione. Il gioco è vietato ai minori di 18 anni e
+                    l'operatore collabora con organizzazioni per la prevenzione delle dipendenze. È fondamentale
+                    ricordare che il gioco deve rimanere una forma di intrattenimento e non un metodo per risolvere
+                    problemi finanziari.</p>
+            </div>
+        </div>
+    </section>
 
-                    <div class="cta__actions">
+    <div class="divider"></div>
 
-                        <button class="btn btn--secondary">Scopri di più</button>
+
+    <section class="faq">
+        <div class="container">
+            <div class="faq__content">
+                <h2 class="faq__title">FAQ - Domande Frequenti</h2>
+                <div class="faq__inner">
+                    <div class="faq__item">
+                        <div class="faq__question">Dragonia casino è sicuro e legale per gli italiani?<span
+                                class="faq__icon">+</span>
+                        </div>
+                        <div class="faq__answer">Sì, Dragonia casino opera con una regolare licenza internazionale
+                            di Anjouan e utilizza protocolli di sicurezza SSL avanzati per proteggere i dati. Pur
+                            non avendo licenza ADM, accetta giocatori italiani in conformità con le proprie
+                            politiche internazionali
+                        </div>
                     </div>
+
+                    <div class="faq__item">
+                        <div class="faq__question">Qual è il deposito minimo su Dragonia?<span
+                                class="faq__icon">+</span></div>
+                        <div class="faq__answer">Il deposito minimo richiesto è di 10 € per la maggior parte dei
+                            metodi di pagamento. Tuttavia, per attivare il bonus di benvenuto o ottenere un Bonus
+                            Crab, è solitamente richiesto un deposito di almeno 20 €</div>
+                    </div>
+                    <div class="faq__item">
+                        <div class="faq__question">Quanto tempo impiegano i prelievi?<span class="faq__icon">+</span>
+                        </div>
+                        <div class="faq__answer">Il team finanziario elabora le richieste di prelievo entro 3 giorni
+                            lavorativi. Una volta approvato, il tempo di ricezione dipende dal metodo: immediato per
+                            e-wallet e criptovalute, 3-5 giorni per i bonifici bancari</div>
+                    </div>
+                    <div class="faq__item">
+                        <div class="faq__question">Come funziona il Bonus Crab?<span class="faq__icon">+</span>
+                        </div>
+                        <div class="faq__answer">Il Bonus Crab è un gioco a "pesca verticale" disponibile per ogni
+                            giocatore che effettua un primo deposito qualificante della giornata (min. 10 €).
+                            Catturando un peluche virtuale, si possono vincere Coins, bonus in denaro o giri
+                            gratuiti</div>
+                    </div>
+
+                    <div class="faq__item">
+                        <div class="faq__question">Esiste un'app mobile di Dragonia?<span class="faq__icon">+</span>
+                        </div>
+                        <div class="faq__answer">Non è presente un'app nativa sugli store, ma il sito è ottimizzato
+                            per dispositivi mobili. La versione browser offre tutte le funzionalità della versione
+                            desktop, garantendo un'esperienza fluida su qualsiasi smartphone e tablet</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <div class="divider"></div>
+
+    <div class="cta">
+        <img class="cta__bg" src="images/bg-cta-3.webp" alt="bunner CTA" loading="lazy">
+
+        <div class="container">
+            <div class="cta__content">
+                <div class="cta__title">250% BONUS DI BENVENUTO</div>
+
+                <div class="cta__actions">
+
+                    <a class="btn btn--secondary" href="{{link}}">Scopri di più</a>
                 </div>
             </div>
         </div>
-
-        <div class="divider"></div>
-
-        <section class="gamification">
-            <div class="container">
-                <div class="gamification__content">
-                    <h2 class="gamification__title">Gamification e Bonus Crab</h2>
-                    <p class="gamification__text">Dragonia casino eleva l'esperienza utente attraverso un sistema di
-                        gamification integrato che premia la fedeltà e l'attività costante. Non si tratta solo di girare
-                        i rulli, ma di avanzare in un percorso che offre ricompense tangibili.</p>
-
-                    <p class="gamification__list-title">Elementi chiave della gamification includono:</p>
-
-                    <ul class="content-list">
-                        <li class="content-list__item"><strong>Bonus Crab: </strong>Una vera "Claw Machine" interattiva.
-                            Ogni primo deposito giornaliero di almeno 10 € garantisce un tentativo. Afferrare un pupazzo
-                            converte il premio in Coins, bonus cash o giri gratis</li>
-                        <li class="content-list__item"><strong>Negozio (Shop): </strong>I giocatori accumulano Coins
-                            (monete) scommettendo o depositando (5% del deposito diventa Coins). Queste monete possono
-                            essere scambiate nel negozio per bonus in denaro, free bets, giri gratuiti o tentativi extra
-                            al Bonus Crab</li>
-                        <li class="content-list__item"><strong>Tornei: </strong>Competizioni regolari tra utenti con
-                            classifiche basate sulle scommesse o sui moltiplicatori di vincita</li>
-                        <li class="content-list__item"><strong>Sfide Settimanali: </strong>Obiettivi specifici (es. "fai
-                            100 spin su questa slot") che, una volta completati, sbloccano ulteriori Coins</li>
-                        <li class="content-list__item"><strong>Livelli VIP: </strong>Un sistema a 5 livelli che sblocca
-                            vantaggi crescenti, come cashback maggiorati, limiti di prelievo più alti e un account
-                            manager personale</li>
-
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <div class="divider"></div>
-
-        <section class="payment">
-            <div class="container">
-                <div class="payment__content">
-                    <h2 class="payment__title">
-                        Metodi di pagamento su Dragonia casino in Italia
-                    </h2>
-                    <p class="payment__text">La gestione finanziaria sulla piattaforma è pensata per essere flessibile e
-                        adatta alle esigenze locali. Dragonia casino in Italia supporta una vasta gamma di opzioni
-                        bancarie, permettendo transazioni sicure sia in valuta fiat che digitale.</p>
-                    <p class="payment__list-title">Ecco una panoramica degli strumenti disponibili per depositi e
-                        prelievi:</p>
-
-                    <div class="table-container">
-                        <table class="table">
-                            <thead class="table__head">
-                                <tr class="table__row">
-                                    <th class="table__cell table__cell--head">Metodo</th>
-                                    <th class="table__cell table__cell--head">Tipo</th>
-                                    <th class="table__cell table__cell--head">Deposito Min/Max</th>
-                                    <th class="table__cell table__cell--head">Prelievo Min/Max</th>
-                                    <th class="table__cell table__cell--head">Tempo di Accredito (Prelievo)</th>
-                                </tr>
-                            </thead>
-                            <tbody class="table__body">
-                                <tr class="table__row">
-                                    <td class="table__cell">Mastercard / Visa</td>
-                                    <td class="table__cell">Carta di Credito/Debito</td>
-                                    <td class="table__cell">10 € - 2.000 €</td>
-                                    <td class="table__cell">10 € - 3.000 €</td>
-                                    <td class="table__cell">1-3 Giorni lavorativi</td>
-                                </tr>
-                                <tr class="table__row">
-                                    <td class="table__cell">MiFinity</td>
-                                    <td class="table__cell">E-wallet</td>
-                                    <td class="table__cell">10 € - 2.500 €</td>
-                                    <td class="table__cell">10 € - 2.500 €</td>
-                                    <td class="table__cell">Immediato / 24 ore</td>
-                                </tr>
-                                <tr class="table__row">
-                                    <td class="table__cell">Revolut</td>
-                                    <td class="table__cell">Carta/Bonifico</td>
-                                    <td class="table__cell">10 € - 5.000 €</td>
-                                    <td class="table__cell">10 € - 5.000 €</td>
-                                    <td class="table__cell">1-3 Giorni lavorativi</td>
-                                </tr>
-                                <tr class="table__row">
-                                    <td class="table__cell">Jeton / Skrill / Neteller</td>
-                                    <td class="table__cell">E-wallet</td>
-                                    <td class="table__cell">10 € - 5.000 €</td>
-                                    <td class="table__cell">10 € - 5.000 €</td>
-                                    <td class="table__cell">Immediato / 24 ore</td>
-                                </tr>
-                                <tr class="table__row">
-                                    <td class="table__cell">Criptovalute (BTC, USDT, etc.)</td>
-                                    <td class="table__cell">Crypto</td>
-                                    <td class="table__cell">10/30 € - 5.000 €</td>
-                                    <td class="table__cell">60 € - 5.000 €</td>
-                                    <td class="table__cell">Immediato / 1 ora</td>
-                                </tr>
-                                <tr class="table__row">
-                                    <td class="table__cell">Bonifico Bancario</td>
-                                    <td class="table__cell">Banca</td>
-                                    <td class="table__cell">N/A</td>
-                                    <td class="table__cell">10 € - 5.000 €</td>
-                                    <td class="table__cell">3-5 Giorni lavorativi</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <p class="payment__text">Su Dragonia i prelievi vengono elaborati dal dipartimento finanziario entro
-                        3 giorni lavorativi. Non vengono applicate commissioni dirette sui pagamenti da parte del
-                        casinò, e la piattaforma di gioco online accetta pagamenti anche tramite vari asset digitali,
-                        garantendo anonimato e velocità per chi predilige le criptovalute.
-                    </p>
+    </div>
 
 
 
-                </div>
-            </div>
-        </section>
+    <footer class="footer">
+        <div class="container footer__container">
+            <div class="footer__content">
+                <a href="{{link}}" class="footer__logo" aria-label="Dragonia Casino – 18+">
+                    <svg class="footer__icon" width="40" height="41">
+                        <use xlink:href="images/sprite.svg#icon-18+"></use>
+                    </svg>
+                </a>
 
-        <div class="divider"></div>
-
-        <section class="review">
-            <div class="container">
-                <div class="review__content">
-                    <h2 class="review__title">Recensioni e feedback su Dragonia</h2>
-                    <p class="review__text">Per fornire un quadro più completo, abbiamo raccolto alcune opinioni
-                        rappresentative dell'esperienza utente su Dragonia casino, basate sulle funzionalità discusse.
-                    </p>
-
-                    <div class="review__inner">
-
-                        <div class="review__card">
-                            <div class="review__header">
-                                <img src="/images/avatar-auto.webp" alt="avatar" class="review__avatar">
-                                <div>
-                                    <div class="review__name">Marco_88</div>
-                                    <div class="review__rating">★★★★ 4/5</div>
-                                </div>
-                            </div>
-                            <div class="review__description">"Mi sono iscritto per il bonus di benvenuto sportivo che
-                                per l'Italia è interessante. Apprezzo molto il Bonus Crab giornaliero, è un tocco
-                                divertente che non ho trovato altrove. I prelievi con crypto sono stati veloci, circa 4
-                                ore."
-                            </div>
-                        </div>
-
-                        <div class="review__card">
-                            <div class="review__header">
-                                <img src="/images/avatar-emmo.webp" alt="avatar" class="review__avatar">
-                                <div>
-                                    <div class="review__name">Giulia_S</div>
-                                    <div class="review__rating">★★★★★ 5/5</div>
-                                </div>
-                            </div>
-                            <div class="review__description">"La varietà di slot è impressionante, ci sono provider che
-                                fatico a trovare su altri siti ADM. L'interfaccia da mobile funziona bene, anche senza
-                                app nativa. Il supporto in chat mi ha aiutato velocemente a risolvere un dubbio sul
-                                rollover."</div>
-                        </div>
-
-                        <div class="review__card">
-                            <div class="review__header">
-                                <img src="/images/avatar-mult.webp" alt="avatar" class="review__avatar">
-                                <div>
-                                    <div class="review__name">LucaTrading90</div>
-                                    <div class="review__rating">★★★★ 4/5</div>
-                                </div>
-                            </div>
-                            <div class="review__description">"Uso Dragonia principalmente per il casinò live. La scelta
-                                dei tavoli Evolution è ottima. Il programma VIP inizia a dare vantaggi reali solo dal
-                                terzo livello, ma il cashback settimanale è un buon paracadute."
-                            </div>
-                        </div>
-
-                        <div class="review__card">
-                            <div class="review__header">
-                                <img src="/images/avatar-girl.webp" alt="avatar" class="review__avatar">
-                                <div>
-                                    <div class="review__name">Alessanda</div>
-                                    <div class="review__rating">★★★★★ 5/5</div>
-                                </div>
-                            </div>
-                            <div class="review__description">"Mi piace molto la sezione live casino, soprattutto i
-                                tavoli con croupier italiani. Le promozioni settimanali sono chiare e facili da usare,
-                                senza condizioni nascoste. Ho già effettuato due prelievi e sono arrivati entrambi in
-                                giornata."</div>
-                        </div>
-
-                        <div class="review__card">
-                            <div class="review__header">
-                                <img src="/images/avatar-girl2.webp" alt="avatar" class="review__avatar">
-                                <div>
-                                    <div class="review__name">Vale77</div>
-                                    <div class="review__rating">★★★★ 4/5</div>
-                                </div>
-                            </div>
-                            <div class="review__description">"Ho scoperto Dragonia grazie a un amico e sono rimasta
-                                sorpresa dalla qualità delle slot e dalla velocità del sito. Il bonus senza deposito è
-                                stato un bel plus, anche se mi piacerebbe vedere più tornei giornalieri."</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <div class="divider"></div>
-
-        <section class="support">
-            <div class="container">
-                <div class="support__content">
-                    <h2 class="support__title">Sicurezza, licenza e supporto clienti</h2>
-                    <p class="support__text">L'affidabilità è un criterio imprescindibile per valutare un operatore.
-                        Dragonia casino adotta protocolli rigorosi per garantire un ambiente protetto e trasparente per
-                        tutti i suoi utenti.</p>
-
-                    <h3 class="support__subtitle">Licenza e protezione dei dati</h3>
-
-                    <p class="support__list-title">Il sito opera con una licenza valida rilasciata dall'autorità di
-                        Anjouan. Sebbene sia una licenza internazionale offshore, impone il rispetto di normative
-                        specifiche riguardanti il gioco corretto e l'antiriciclaggio. La sicurezza tecnica è garantita
-                        da:</p>
-
-                    <ul class="content-list">
-                        <li class="content-list__item"><strong>Crittografia SSL: </strong>La versione TLS 1.2 assicura
-                            che le informazioni personali e finanziarie siano trasmesse in modo sicuro e non
-                            intercettabile</li>
-                        <li class="content-list__item"><strong>KYC (Know Your Customer): </strong>Procedure di verifica
-                            dell'identità obbligatorie prima dei prelievi, per prevenire frodi e tutelare i minori</li>
-                        <li class="content-list__item"><strong>RNG Certificato: </strong>I giochi utilizzano generatori
-                            di numeri casuali testati per assicurare risultati equi e non manipolabili</li>
-
-                    </ul>
-
-                    <h3 class="support__subtitle">Servizio di assistenza</h3>
-
-                    <p class="support__text">In caso di difficoltà o dubbi, Dragonia casino mette a disposizione un
-                        servizio clienti efficiente.</p>
-
-                    <p class="support__list-title">I canali di contatto disponibili sono:</p>
-
-                    <div class="electric-cards">
-
-                        <div class="electric-card">
-                            <div class="electric-card__inner">
-                                <div class="electric-card__border-outer">
-                                    <div class="electric-card__main"></div>
-                                </div>
-                                <div class="electric-card__glow-1"></div>
-                                <div class="electric-card__glow-2"></div>
-                            </div>
-                            <div class="electric-card__overlay-1"></div>
-                            <div class="electric-card__overlay-2"></div>
-                            <div class="electric-card__background-glow"></div>
-                            <div class="electric-card__content">
-                                <div class="electric-card__content-top">
-                                    <div class="electric-card__badge">Live Chat</div>
-                                    <p class="electric-card__title">24/7</p>
-                                </div>
-                                <hr class="electric-card__divider" />
-                                <div class="electric-card__content-bottom">
-                                    <p class="electric-card__description">Risposte rapide, accessibile dalla schermata
-                                        iniziale. Ideale per domande veloci</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="electric-card">
-                            <div class="electric-card__inner">
-                                <div class="electric-card__border-outer">
-                                    <div class="electric-card__main"></div>
-                                </div>
-                                <div class="electric-card__glow-1"></div>
-                                <div class="electric-card__glow-2"></div>
-                            </div>
-                            <div class="electric-card__overlay-1"></div>
-                            <div class="electric-card__overlay-2"></div>
-                            <div class="electric-card__background-glow"></div>
-                            <div class="electric-card__content">
-                                <div class="electric-card__content-top">
-                                    <div class="electric-card__badge">Email</div>
-                                    <p class="electric-card__title">Support 24/7</p>
-                                </div>
-                                <hr class="electric-card__divider" />
-                                <div class="electric-card__content-bottom">
-                                    <p class="electric-card__description">Per problemi tecnici complessi o invio
-                                        documenti. Risposta entro 24 ore</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="electric-card">
-                            <div class="electric-card__inner">
-                                <div class="electric-card__border-outer">
-                                    <div class="electric-card__main"></div>
-                                </div>
-                                <div class="electric-card__glow-1"></div>
-                                <div class="electric-card__glow-2"></div>
-                            </div>
-                            <div class="electric-card__overlay-1"></div>
-                            <div class="electric-card__overlay-2"></div>
-                            <div class="electric-card__background-glow"></div>
-                            <div class="electric-card__content">
-                                <div class="electric-card__content-top">
-                                    <div class="electric-card__badge">Help Centre</div>
-                                    <p class="electric-card__title">Online</p>
-                                </div>
-                                <hr class="electric-card__divider" />
-                                <div class="electric-card__content-bottom">
-                                    <p class="electric-card__description">Sezione FAQ dettagliata divisa per argomenti
-                                        (Bonus, Prelievi, Tecnico)
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-
-                    </div>
-
-                    <p class="support__text">Il supporto è preparato per gestire richieste relative a bonus, verifiche
-                        account e gioco responsabile.</p>
-
-                </div>
-            </div>
-        </section>
-
-        <div class="divider"></div>
-
-        <section class="what">
-            <div class="container">
-                <div class="what__content">
-                    <h2 class="what__title">Perchè scegliere Dragonia</h2>
-                    <p class="what__text">In un mercato affollato, Dragonia casino cerca di emergere attraverso
-                        caratteristiche distintive.</p>
-
-                    <p class="what__list-title">Ecco i principali motivi per cui i giocatori potrebbero preferire questo
-                        brand:</p>
-
-                    <ul class="content-list">
-                        <li class="content-list__item"><strong>Vasta Libreria: </strong>Con oltre 11.300 giochi, è
-                            difficile non trovare il proprio titolo preferito</li>
-                        <li class="content-list__item"><strong>Gamification Unica: </strong>Il Bonus Crab e lo Shop
-                            aggiungono valore ogni giorno, oltre alle semplici vincite alle slot</li>
-                        <li class="content-list__item"><strong>Flessibilità nei Pagamenti: </strong>Supporto completo
-                            per Euro e criptovalute, con limiti accessibili (deposito minimo 10 €)</li>
-                        <li class="content-list__item"><strong>Ottimizzazione Mobile: </strong>Il sito è perfettamente
-                            fruibile da smartphone e tablet, garantendo un'esperienza fluida senza necessità di download
-                        </li>
-                        <li class="content-list__item"><strong>Promozioni Continue: </strong>Non solo un benvenuto, ma
-                            ricariche settimanali, cashback e tornei che premiano la costanza</li>
-
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <div class="divider"></div>
-
-
-        <section class="about">
-            <div class="container">
-                <div class="about__content">
-                    <h2 class="about__title">Gioco responsabile</h2>
-                    <p class="about__text">Dragonia promuove attivamente il Gioco Responsabile. La piattaforma fornisce
-                        strumenti per aiutare i giocatori a mantenere il controllo, come la possibilità di impostare
-                        limiti di deposito o periodi di autoesclusione. Il gioco è vietato ai minori di 18 anni e
-                        l'operatore collabora con organizzazioni per la prevenzione delle dipendenze. È fondamentale
-                        ricordare che il gioco deve rimanere una forma di intrattenimento e non un metodo per risolvere
-                        problemi finanziari.</p>
-                </div>
-            </div>
-        </section>
-
-        <div class="divider"></div>
-
-
-        <section class="faq">
-            <div class="container">
-                <div class="faq__content">
-                    <h2 class="faq__title">FAQ - Domande Frequenti</h2>
-                    <div class="faq__inner">
-                        <div class="faq__item">
-                            <div class="faq__question">Dragonia casino è sicuro e legale per gli italiani?<span
-                                    class="faq__icon">+</span>
-                            </div>
-                            <div class="faq__answer">Sì, Dragonia casino opera con una regolare licenza internazionale
-                                di Anjouan e utilizza protocolli di sicurezza SSL avanzati per proteggere i dati. Pur
-                                non avendo licenza ADM, accetta giocatori italiani in conformità con le proprie
-                                politiche internazionali
-                            </div>
-                        </div>
-
-                        <div class="faq__item">
-                            <div class="faq__question">Qual è il deposito minimo su Dragonia?<span
-                                    class="faq__icon">+</span></div>
-                            <div class="faq__answer">Il deposito minimo richiesto è di 10 € per la maggior parte dei
-                                metodi di pagamento. Tuttavia, per attivare il bonus di benvenuto o ottenere un Bonus
-                                Crab, è solitamente richiesto un deposito di almeno 20 €</div>
-                        </div>
-                        <div class="faq__item">
-                            <div class="faq__question">Quanto tempo impiegano i prelievi?<span
-                                    class="faq__icon">+</span></div>
-                            <div class="faq__answer">Il team finanziario elabora le richieste di prelievo entro 3 giorni
-                                lavorativi. Una volta approvato, il tempo di ricezione dipende dal metodo: immediato per
-                                e-wallet e criptovalute, 3-5 giorni per i bonifici bancari</div>
-                        </div>
-                        <div class="faq__item">
-                            <div class="faq__question">Come funziona il Bonus Crab?<span class="faq__icon">+</span>
-                            </div>
-                            <div class="faq__answer">Il Bonus Crab è un gioco a "pesca verticale" disponibile per ogni
-                                giocatore che effettua un primo deposito qualificante della giornata (min. 10 €).
-                                Catturando un peluche virtuale, si possono vincere Coins, bonus in denaro o giri
-                                gratuiti</div>
-                        </div>
-
-                        <div class="faq__item">
-                            <div class="faq__question">Esiste un'app mobile di Dragonia?<span class="faq__icon">+</span>
-                            </div>
-                            <div class="faq__answer">Non è presente un'app nativa sugli store, ma il sito è ottimizzato
-                                per dispositivi mobili. La versione browser offre tutte le funzionalità della versione
-                                desktop, garantendo un'esperienza fluida su qualsiasi smartphone e tablet</div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-        <div class="divider"></div>
-
-        <div class="cta">
-            <img class="cta__bg" src="images/bg-cta-3.webp" alt="bunner CTA" loading="lazy">
-
-            <div class="container">
-                <div class="cta__content">
-                    <div class="cta__title">250% BONUS DI BENVENUTO</div>
-
-                    <div class="cta__actions">
-
-                        <button class="btn btn--secondary">Scopri di più</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-
-        <footer class="footer">
-            <div class="container footer__container">
-                <div class="footer__content">
-                    <a href="#" class="footer__logo" aria-label="Dragonia Casino – 18+">
-                        <svg class="footer__icon" width="40" height="41">
-                            <use xlink:href="images/sprite.svg#icon-18+"></use>
+                <div class="footer__payments">
+                    <a href="{{link}}" class="footer__payment-link" aria-label="Visa">
+                        <svg class="footer__payment-icon" role="img" aria-hidden="true" width="50" height="36">
+                            <use xlink:href="images/sprite.svg#icon-visa"></use>
                         </svg>
                     </a>
 
-                    <div class="footer__payments">
-                        <button type="button" class="footer__payment-btn" aria-label="Visa" style="--icon-size: 50px;">
-                            <svg class="footer__payment-icon" role="img" aria-hidden="true" width="100%" height="100%">
-                                <use xlink:href="images/sprite.svg#icon-visa"></use>
-                            </svg>
-                        </button>
+                    <a href="{{link}}" class="footer__payment-link" aria-label="Mastercard">
+                        <svg class="footer__payment-icon" role="img" aria-hidden="true" width="50" height="36">
+                            <use xlink:href="images/sprite.svg#icon-mastercard"></use>
+                        </svg>
+                    </a>
 
-                        <button type="button" class="footer__payment-btn" aria-label="Mastercard"
-                            style="--icon-size: 50px;">
-                            <svg class="footer__payment-icon" role="img" aria-hidden="true" width="100%" height="100%">
-                                <use xlink:href="images/sprite.svg#icon-mastercard"></use>
-                            </svg>
-                        </button>
-
-                        <button type="button" class="footer__payment-btn" aria-label="Interac"
-                            style="--icon-size: 55px;">
-                            <svg class="footer__payment-icon" role="img" aria-hidden="true" width="100%" height="100%">
-                                <use xlink:href="images/sprite.svg#icon-interac"></use>
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-
-                <div class="footer__bottom">
-                    <p class="footer__bottom-text">
-                        Il gioco d'azzardo può creare dipendenza. Gioca in modo responsabile. Solo i clienti più anziani
-                        sono accettati in Dragonia
-                        18 anni.
-                    </p>
-                    <p class="footer__bottom-text">
-                        2026 &copy; Dragonia Tutti i diritti riservati
-                    </p>
+                    <a href="{{link}}" class="footer__payment-link" aria-label="Interac">
+                        <svg class="footer__payment-icon" role="img" aria-hidden="true" width="55" height="36">
+                            <use xlink:href="images/sprite.svg#icon-interac"></use>
+                        </svg>
+                    </a>
                 </div>
             </div>
-        </footer>
 
-        <script>
-            document.querySelectorAll(".slider").forEach((slider) => {
-                const track = slider.querySelector(".slider__track");
-                const left = slider.querySelector(".slider__arrow--left");
-                const right = slider.querySelector(".slider__arrow--right");
-                if (left) left.onclick = () => track.scrollBy({ left: -280, behavior: "smooth" });
-                if (right) right.onclick = () => track.scrollBy({ left: 280, behavior: "smooth" });
-            });
-            document.querySelectorAll(".faq__question").forEach((q) => {
-                q.addEventListener("click", () => {
-                    q.parentElement.classList.toggle("faq__item--active");
-                });
-            });
-        </script>
-    </body>
+            <div class="footer__bottom">
+                <p class="footer__bottom-text">
+                    Il gioco d'azzardo può creare dipendenza. Gioca in modo responsabile. Solo i clienti più anziani
+                    sono accettati in Dragonia
+                    18 anni.
+                </p>
+                <p class="footer__bottom-text">
+                    2026 &copy; Dragonia Tutti i diritti riservati
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/app.js" defer></script>
 </body>
+
 
 </html>
