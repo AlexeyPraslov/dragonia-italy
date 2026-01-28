@@ -2541,6 +2541,9 @@ p {
           flex-direction: column;
   gap: 40px;
 }
+.gamification__content .btn {
+  margin: 0 auto;
+}
 @media (max-width: 767px) {
   .gamification__content {
     gap: 32px;
