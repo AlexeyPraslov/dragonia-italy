@@ -1,0 +1,16 @@
+.divider {
+    height: 4px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, transparent, #ff9a00, transparent);
+    box-shadow: 0 0 40px rgba(255, 150, 0, 1);
+    margin: 25px auto;
+    width: 100%;
+    max-width: 1240px;
+}
+
+@include vp-480 {
+    .divider {
+        height: 3px;
+        margin: 40px auto;
+    }
+}

@@ -1,0 +1,39 @@
+.content-list {
+    display: flex;
+    gap: 16px;
+    list-style: none;
+    flex-wrap: wrap;
+
+    &__item {
+        flex: 1;
+        min-width: 250px;
+        background: linear-gradient(135deg, #1a0d05, #2b1309);
+        padding: 18px 20px;
+        border-radius: 16px;
+        box-shadow: 0 0 20px rgba(255, 154, 0, 0.3);
+        color: #ffcc99;
+        transition:
+            transform 0.3s ease,
+            box-shadow 0.3s ease;
+        font-size: 15px;
+
+        &:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 30px rgba(255, 154, 0, 0.5);
+        }
+
+        strong {
+            font-size: 19px;
+        }
+    }
+}
+
+@include vp-480 {
+    .content-list {
+        flex-direction: column;
+
+        &__item {
+            min-width: 100%;
+        }
+    }
+}

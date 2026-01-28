@@ -1,11 +1,13 @@
+// ================= COLORS =================
 $color-white: #ffffff;
 $color-black: #000000;
 
-// viewport breakpoints
+// ================= VIEWPORT BREAKPOINTS =================
 $vp-tablet: 1023px;
 $vp-mobile: 767px;
 $vp-small: 480px;
 
+// ================= CSS VARIABLES =================
 :root {
     --electric-border-color: #ff9a00;
     --electric-light-color: oklch(from var(--electric-border-color) l c h);

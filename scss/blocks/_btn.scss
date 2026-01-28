@@ -1,0 +1,76 @@
+// ================= BUTTONS =================
+.btn {
+    height: 50px;
+    padding: 0 40px;
+    width: fit-content;
+    border: none;
+    cursor: pointer;
+    font-weight: 900;
+    user-select: none;
+    outline: none;
+    white-space: nowrap;
+    background: none;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    text-shadow:
+        -1px -1px 0 black,
+        1px -1px 0 black,
+        -1px 1px 0 black,
+        1px 1px 0 black;
+
+    &:hover {
+        transform: translateY(-2px);
+    }
+
+    &--primary {
+        color: #ffffff;
+        background-image: url("../images/btn-primary.webp");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    &--secondary {
+        color: #ffffff;
+        background-image: url("../images/btn-secondary.webp");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        &::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: url("../images/btn-secondary--hover.webp");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0;
+            transition: opacity 0.35s ease;
+            z-index: -1;
+        }
+
+        &:hover::after {
+            opacity: 1;
+        }
+    }
+
+    @include vp-1023 {
+        height: 40px;
+        padding: 0 32px;
+        font-size: 14px;
+    }
+
+    @include vp-767 {
+        height: 40px;
+        padding: 0 32px;
+        font-size: 14px;
+    }
+
+    @include vp-480 {
+        height: 36px;
+        padding: 0 32px;
+        font-size: 13px;
+    }
+}

@@ -1,0 +1,69 @@
+.review {
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 48px;
+    }
+
+    &__inner {
+        display: flex;
+        gap: 24px;
+        flex-wrap: wrap;
+
+        @include vp-767 {
+            flex-direction: column;
+        }
+    }
+
+    &__card {
+        flex: 1;
+        min-width: 300px;
+        background: #1c0f05;
+        border-radius: 22px;
+        padding: 24px;
+        box-shadow: 0 0 30px rgba(255, 154, 0, 0.4);
+        color: #ffcc99;
+        transition:
+            transform 0.3s ease,
+            box-shadow 0.3s ease;
+
+        &:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 0 45px rgba(255, 154, 0, 0.6);
+        }
+
+        @include vp-767 {
+            min-width: 100%;
+        }
+    }
+
+    &__header {
+        display: flex;
+        gap: 14px;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    &__avatar {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #ff9a00, #ff3d00);
+    }
+
+    &__name {
+        color: #ffb000;
+        font-size: 16px;
+    }
+
+    &__rating {
+        color: #ff9a00;
+        font-size: 14px;
+    }
+
+    &__text {
+        color: #ffd699;
+        font-size: 14px;
+        line-height: 1.6;
+    }
+}

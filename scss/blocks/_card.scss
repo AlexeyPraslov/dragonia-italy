@@ -1,0 +1,72 @@
+// ================= CARDS =================
+.card {
+    scroll-snap-align: start;
+    flex-shrink: 0;
+    width: 125px;
+    height: 180px;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s ease;
+
+    &:hover {
+        transform: translateY(-6px);
+    }
+
+    &--image {
+        background: #0f0f15;
+    }
+
+    &__bg {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        z-index: 0;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.7) 0%,
+            rgba(0, 0, 0, 0.3) 45%,
+            rgba(0, 0, 0, 0) 100%
+        );
+        z-index: 1;
+    }
+
+    &__label {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        z-index: 2;
+        width: 100%;
+        padding: 10px;
+        font-weight: 900;
+        font-size: 16px;
+        color: #ff9a00;
+        text-align: center;
+    }
+
+    @include vp-767 {
+        &__label {
+            padding: 12px;
+            font-size: 14px;
+        }
+    }
+
+    @include vp-480 {
+        &__label {
+            padding: 10px;
+            font-size: 13px;
+        }
+    }
+}

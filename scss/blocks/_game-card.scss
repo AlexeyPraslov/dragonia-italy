@@ -1,0 +1,279 @@
+.game-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 24px;
+
+    @include vp-1023 {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: flex-start;
+        overflow-x: auto;
+        padding: 0 24px;
+        margin: 0 -24px;
+        gap: 16px;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none; // Firefox
+
+        &::-webkit-scrollbar {
+            display: none; // Chrome, Safari, Edge
+        }
+    }
+
+    @include vp-767 {
+        gap: 12px;
+        padding: 0 16px;
+        margin: 0 -16px;
+    }
+
+    @include vp-480 {
+        gap: 10px;
+        padding: 0 12px;
+        margin: 0 -12px;
+    }
+}
+
+.game-card {
+    display: block;
+    padding: 2px;
+    border-radius: 16px;
+    position: relative;
+    background:
+        linear-gradient(
+            -30deg,
+            var(--gradient-color),
+            transparent,
+            var(--gradient-color)
+        ),
+        linear-gradient(
+            to bottom,
+            var(--color-neutral-900),
+            var(--color-neutral-900)
+        );
+    text-decoration: none;
+    color: inherit;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    aspect-ratio: 2 / 3;
+    height: auto;
+
+    &:hover {
+        transform: translateY(-6px);
+    }
+
+    &__inner {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 16px;
+        overflow: hidden;
+    }
+
+    &__border-outer {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border: 2px solid rgba(255, 154, 0, 0.5);
+        border-radius: 16px;
+        padding-right: 4px;
+        padding-bottom: 4px;
+        pointer-events: none;
+        z-index: 2;
+    }
+
+    &__main {
+        position: absolute;
+        top: -4px;
+        left: -4px;
+        right: 0;
+        bottom: 0;
+        width: calc(100% + 4px);
+        height: calc(100% + 4px);
+        border-radius: 16px;
+        z-index: 2;
+
+        @include vp-1023 {
+            border: none !important;
+            filter: none !important;
+        }
+    }
+
+    // Слои электрического эффекта — скрыты по умолчанию
+    &__glow-1,
+    &__glow-2,
+    &__overlay-1,
+    &__overlay-2,
+    &__background-glow {
+        display: none;
+    }
+
+    &__image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        display: block;
+        border-radius: 16px;
+        z-index: 1;
+    }
+
+    &__hover {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.85);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        border-radius: 16px;
+        z-index: 4;
+    }
+
+    &:hover &__hover {
+        opacity: 1;
+    }
+
+    &__title {
+        font-size: 20px;
+        font-weight: 900;
+        color: #ff9a00;
+        text-shadow: 0 0 15px rgba(255, 150, 0, 0.8);
+        margin-bottom: 20px;
+        text-align: center;
+        padding: 0 16px;
+
+        @include vp-767 {
+            font-size: 18px;
+        }
+
+        @include vp-480 {
+            font-size: 16px;
+        }
+    }
+
+    &__play {
+        background: linear-gradient(90deg, #ff7a00, #ffb000);
+        color: #000;
+        font-weight: 900;
+        font-size: 18px;
+        padding: 14px 40px;
+        border-radius: 24px;
+        box-shadow: 0 0 30px rgba(255, 140, 0, 1);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        user-select: none;
+        border: none;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+
+        @include vp-767 {
+            font-size: 16px;
+            padding: 12px 32px;
+        }
+
+        @include vp-480 {
+            font-size: 15px;
+            padding: 10px 28px;
+        }
+    }
+
+    @include desktop-only {
+        &__main {
+            border: 2px solid var(--electric-border-color);
+            filter: url(#turbulent-displace);
+        }
+
+        &__glow-1 {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: 2px solid rgba(255, 154, 0, 0.6);
+            border-radius: 16px;
+            filter: blur(1px);
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        &__glow-2 {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: 2px solid var(--electric-light-color);
+            border-radius: 16px;
+            filter: blur(4px);
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        &__overlay-1,
+        &__overlay-2 {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 16px;
+            opacity: 1;
+            mix-blend-mode: overlay;
+            transform: scale(1.1);
+            filter: blur(16px);
+            background: linear-gradient(
+                -30deg,
+                white,
+                transparent 30%,
+                transparent 70%,
+                white
+            );
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        &__overlay-2 {
+            opacity: 0.5;
+        }
+
+        &__background-glow {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 16px;
+            filter: blur(32px);
+            transform: scale(1.1);
+            opacity: 0.3;
+            z-index: 0;
+            background: linear-gradient(
+                -30deg,
+                var(--electric-light-color),
+                transparent,
+                var(--electric-border-color)
+            );
+            pointer-events: none;
+        }
+    }
+}

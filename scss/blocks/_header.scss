@@ -1,0 +1,32 @@
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    background: transparent;
+
+    &__content {
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 20px;
+
+        @include vp-767 {
+            height: 60px;
+            padding: 0;
+        }
+
+        @include vp-480 {
+            height: 60px;
+        }
+    }
+
+    &__logo {
+        width: 274px;
+
+        @include vp-767 {
+            width: 144px;
+        }
+    }
+}

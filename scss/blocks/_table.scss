@@ -1,0 +1,38 @@
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;
+
+    &__head {
+        background: linear-gradient(
+            90deg,
+            #ffb000 0%,
+            #ff7a00 30%,
+            #c24f00 50%,
+            #ff7a00 70%,
+            #ffb000 100%
+        );
+    }
+
+    &__cell {
+        padding: 18px 22px;
+        white-space: nowrap;
+
+        &--head {
+            color: #000;
+            font-weight: 900;
+        }
+    }
+
+    &__body .table__row:hover .table__cell {
+        background: rgba(255, 154, 0, 0.1);
+        color: #ffcc99;
+    }
+}
+
+@include vp-480 {
+    .table__cell {
+        padding: 14px 16px;
+        font-size: 14px;
+    }
+}

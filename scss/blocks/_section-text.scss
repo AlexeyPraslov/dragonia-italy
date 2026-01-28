@@ -1,0 +1,55 @@
+// ================= TYPOGRAPHY =================
+.section-title {
+    font-size: 36px;
+    font-weight: 900;
+    color: #ff9a00;
+    text-shadow: 0 0 20px rgba(255, 150, 0, 0.6);
+    position: relative;
+    display: inline-block;
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: -16px;
+        left: 0;
+        width: 100px;
+        height: 4px;
+        border-radius: 2px;
+        background: linear-gradient(90deg, transparent, #ff9a00, transparent);
+        box-shadow: 0 0 20px rgba(255, 150, 0, 0.8);
+    }
+}
+
+.section-text {
+    max-width: 760px;
+    font-size: 16px;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+@include vp-1023 {
+    .section-title {
+        font-size: 32px;
+    }
+}
+
+@include vp-767 {
+    .section-title {
+        font-size: 28px;
+
+        &::after {
+            width: 80px;
+        }
+    }
+}
+
+@include vp-480 {
+    .section-title {
+        font-size: 24px;
+
+        &::after {
+            width: 60px;
+            height: 3px;
+        }
+    }
+}
