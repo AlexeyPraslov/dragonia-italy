@@ -576,7 +576,7 @@ p {
 }
 
 .btn {
-  height: 50px;
+  height: 55px;
   padding: 0 40px;
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -635,22 +635,22 @@ p {
 }
 @media (max-width: 1023px) {
   .btn {
-    height: 40px;
-    padding: 0 32px;
+    height: 48px;
+    padding: 0 37px;
     font-size: 14px;
   }
 }
 @media (max-width: 767px) {
   .btn {
-    height: 40px;
-    padding: 0 32px;
+    height: 48px;
+    padding: 0 37px;
     font-size: 14px;
   }
 }
 @media (max-width: 480px) {
   .btn {
-    height: 36px;
-    padding: 0 32px;
+    height: 48px;
+    padding: 0 39px;
     font-size: 13px;
   }
 }
@@ -1084,6 +1084,11 @@ p {
   .game-cards-grid::-webkit-scrollbar {
     display: none;
   }
+  .game-cards-grid .game-card {
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+    width: 200px;
+  }
 }
 @media (max-width: 767px) {
   .game-cards-grid {
@@ -1091,12 +1096,18 @@ p {
     padding: 0 16px;
     margin: 0 -16px;
   }
+  .game-cards-grid .game-card {
+    width: 180px;
+  }
 }
 @media (max-width: 480px) {
   .game-cards-grid {
     gap: 10px;
     padding: 0 12px;
     margin: 0 -12px;
+  }
+  .game-cards-grid .game-card {
+    width: 160px;
   }
 }
 
@@ -1114,7 +1125,6 @@ p {
   transition: transform 0.3s ease;
   transition: transform 0.3s ease, -webkit-transform 0.3s ease;
   aspect-ratio: 2/3;
-  height: auto;
 }
 .game-card:hover {
   -webkit-transform: translateY(-6px);
@@ -1175,7 +1185,7 @@ p {
      object-position: center;
   display: block;
   border-radius: 16px;
-  z-index: 1;
+  z-index: 0;
 }
 .game-card__hover {
   position: absolute;

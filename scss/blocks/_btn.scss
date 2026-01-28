@@ -1,6 +1,6 @@
 // ================= BUTTONS =================
 .btn {
-    height: 50px;
+    height: 55px;
     padding: 0 40px;
     width: fit-content;
     border: none;
@@ -57,20 +57,20 @@
     }
 
     @include vp-1023 {
-        height: 40px;
-        padding: 0 32px;
+        height: 48px;
+        padding: 0 37px;
         font-size: 14px;
     }
 
     @include vp-767 {
-        height: 40px;
-        padding: 0 32px;
+        height: 48px;
+        padding: 0 37px;
         font-size: 14px;
     }
 
     @include vp-480 {
-        height: 36px;
-        padding: 0 32px;
+        height: 48px;
+        padding: 0 39px;
         font-size: 13px;
     }
 }
